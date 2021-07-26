@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'artify.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_artify',
+        'USER': 'postgres',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -125,6 +129,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media_files'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
