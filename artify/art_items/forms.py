@@ -23,7 +23,7 @@ class EditArtItemForm(ArtItemForm):
         }
 
 
-class CommentForm(forms.ModelForm):
+class CommentForm(BootstrapFormMixin, forms.ModelForm):
     item_pk = forms.IntegerField(
         widget=forms.HiddenInput()
     )
