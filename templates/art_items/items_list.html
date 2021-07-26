@@ -4,13 +4,18 @@
     <h1 class='text-center'>All art photos</h1>
     <div class="row">
         {% for item in art_items %}
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.description }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.type }} {{ item.name }}}}</h5>
-                        <p class="card-text">{{ item.description }}</p>
-                        <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+                        <h5 class="card-title">{{ item.name|capfirst }}</h5>
+                        <h6 class="card-title"><i>{{ item.type }}</i></h6>
+                        <p class="card-text">{{ item.description|capfirst|truncatechars:25 }}</p>
+                        <a href="{% url 'like item' item.id %}">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </a>
+                        <p class="mt-2">Likes: {{ item.like_set.count }}</p>
+                        <a href="{% url 'item details' item.id  %}" class="btn btn-primary">See details</a>
                     </div>
                 </div>
             </div>
