@@ -15,15 +15,17 @@
         <hr class="m-4">
 
         <div class="row">
-            <div class="col-lg-6">
-                <p class="lead">Already have an account? <br><a class="btn btn-primary btn-xl text-uppercase"
-                                                                href="#services">SIGN IN</a></p>
-            </div>
+            {% if not request.user.is_authenticated %}
+                <div class="col-lg-6">
+                    <p class="lead">Already have an account? <br><a class="btn btn-primary btn-xl text-uppercase"
+                                                                    href="{% url 'sign in user' %}">SIGN IN</a></p>
+                </div>
 
-            <div class="col-lg-6">
-                <p class="lead"> Do not have an account? <br><a class="btn btn-primary btn-xl text-uppercase"
-                                                                href="#services">SIGN UP</a></p>
-            </div>
+                <div class="col-lg-6">
+                    <p class="lead"> Do not have an account? <br><a class="btn btn-primary btn-xl text-uppercase"
+                                                                    href="{% url 'sign up user' %}">SIGN UP</a></p>
+                </div>
+            {% endif %}
         </div>
 
     </header>

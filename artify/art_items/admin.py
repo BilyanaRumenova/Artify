@@ -4,7 +4,7 @@ from artify.art_items.models import ArtItem
 
 
 @admin.register(ArtItem)
-class ArtItemAdmin(admin.ModelAdmin):
+class ArtifyItemAdmin(admin.ModelAdmin):
     list_display = ('type', 'name', 'description', 'image', 'likes_count',)
     list_filter = ('type',)
 

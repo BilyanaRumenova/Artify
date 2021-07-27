@@ -1,0 +1,52 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>Hello, {{ request.user }}!</h1>
+        <h5>This is your profile</h5>
+{#        {{ profile.first_name }}#}
+{#        {{ profile.last_name }}#}
+{#        {{ profile.location }}#}
+        {% if profile.profile_image %}
+            <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
+                 height="140">
+        {% else %}
+            <img class="rounded-circle mb-3" src="{% static 'images/index.png' %}" alt="" width="140"
+                 height="140">
+        {% endif %}
+        <div class="w-50 m-auto">
+            <form action="{% url 'profile details' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    {% if art_items %}
+        <h2 class='text-center'>These are you art photos</h2>
+        <div class="row">
+            <div class="row">
+                {% for item in art_items %}
+                    <div class="col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ item.image.url }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                                <p class="card-text"><strong>Owner: {{ request.user }}</strong></p>
+                                <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center">
+            <h2>You have no art photos</h2>
+            <a href="{% url 'create item' %}" class="btn btn-success">Add Art Item Photo</a>
+        </div>
+    {% endif %}
+{% endblock %}

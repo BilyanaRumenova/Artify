@@ -15,10 +15,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
 
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="{% url 'list items' %}">All Photos</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'create item' %}">Add Art Photo</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">Sign In</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">Sign Up</a></li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'list items' %}">All Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'create item' %}">Add Art Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile details' %}">{{ request.user }}</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'sign out user' %}">Sign Out</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'sign in user' %}">Sign In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'sign up user' %}">Sign Up</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

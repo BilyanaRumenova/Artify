@@ -9,8 +9,7 @@
             <div class="d-flex justify-content-between">
                 <h5><u>Name:</u> {{ item.name }}</h5>
                 <h6><u>Type:</u> {{ item.type }}</h6>
-
-                {#                <h5><u>Owner:</u> {{ pet.user.email }}</h5>#}
+                <h5><u>Owner:</u> {{ item.user }}</h5>
             </div>
             <p class="mt-2">Description: {{ item.description }}</p>
             {#            {% if is_owner %}#}
@@ -21,12 +20,11 @@
             {#            {% else %}#}
 
             <a href="{% url 'like item' item.id %}">
-                <i class="fa fa-heart" aria-hidden="true"></i>
-                {#                    {% if is_liked %}#}
-                {#                        <i class="fa fa-heart" aria-hidden="true"></i>#}
-                {#                    {% else %}#}
-                {#                        <i class="fa fa-heart-o" aria-hidden="true"></i>#}
-                {#                    {% endif %}#}
+                {% if is_liked %}
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                {% else %}
+                    <i class="far fa-heart" aria-hidden="true"></i>
+                {% endif %}
             </a>
             <p class="mt-2">Likes: {{ item.likes_count }}</p>
             {#            {% endif %}#}
@@ -37,8 +35,8 @@
         {% if comments %}
             {% for comment in comments %}
                 <div class="box">
-                    {#                    <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>#}
-                    <h5><em>{{ comment.comment }}</em></h5>
+                    <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>
+{#                    <h5><em>{{ comment.comment }}</em></h5>#}
                     <hr>
                 </div>
             {% endfor %}

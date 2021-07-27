@@ -31,26 +31,30 @@ class ArtItem(models.Model):
         upload_to='arts',
     )
 
-    # user = models.ForeignKey(
-    #     UserModel,
-    #     on_delete=models.CASCADE,
-    # )
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+    )
 
 
 class Like(models.Model):
-    art_item = models.ForeignKey(
+    item = models.ForeignKey(
         ArtItem,
         on_delete=models.CASCADE,
     )
-    # user = models.ForeignKey(
-    #     UserModel,
-    #     on_delete=models.CASCADE,
-    # )
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+    )
 
 
 class Comment(models.Model):
     comment = models.TextField()
     item = models.ForeignKey(
         ArtItem,
+        on_delete=models.CASCADE,
+    )
+    user = models.ForeignKey(
+        UserModel,
         on_delete=models.CASCADE,
     )
