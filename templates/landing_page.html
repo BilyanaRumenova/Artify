@@ -1,7 +1,4 @@
 {% extends 'shared/base.html' %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
 <body id="page-top">
 
@@ -30,4 +27,10 @@
 
     </header>
 
+    {% if request.user.is_authenticated %}
+        {% include 'art_items/items_albums.html' %}
+    {% endif %}
+
 {% endblock %}
+
+

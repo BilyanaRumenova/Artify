@@ -5,9 +5,9 @@
     <div class="text-center">
         <h1>Hello, {{ request.user }}!</h1>
         <h5>This is your profile</h5>
-{#        {{ profile.first_name }}#}
-{#        {{ profile.last_name }}#}
-{#        {{ profile.location }}#}
+        {#        {{ profile.first_name }}#}
+        {#        {{ profile.last_name }}#}
+        {#        {{ profile.location }}#}
         {% if profile.profile_image %}
             <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
                  height="140">
@@ -25,7 +25,7 @@
     </div>
     <hr>
     {% if art_items %}
-        <h2 class='text-center'>These are you art photos</h2>
+        <h1 class='text-center text-uppercase'>Portfolio</h1>
         <div class="row">
             <div class="row">
                 {% for item in art_items %}
@@ -49,4 +49,6 @@
             <a href="{% url 'create item' %}" class="btn btn-success">Add Art Item Photo</a>
         </div>
     {% endif %}
+
+    {% include 'art_items/items_albums.html' %}
 {% endblock %}

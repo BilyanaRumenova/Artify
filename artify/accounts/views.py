@@ -13,7 +13,7 @@ def sign_in_user(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('list items')
+            return redirect('index')
     else:
         form = SignInForm()
 
@@ -29,7 +29,7 @@ def sign_up_user(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('list items')
+            return redirect('index')
     else:
         form = SignUpForm()
 
@@ -42,7 +42,7 @@ def sign_up_user(request):
 @login_required
 def sign_out_user(request):
     logout(request)
-    return redirect('landing page')
+    return redirect('index')
 
 
 @login_required
