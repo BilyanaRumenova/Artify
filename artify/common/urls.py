@@ -1,7 +1,6 @@
 from django.urls import path
-
-from artify.common.views import landing_page
+from artify.common.views import LandingPageView
 
 urlpatterns = (
-    path('', landing_page, name='index'),
+    path('', LandingPageView.as_view(), name='index'),
 )

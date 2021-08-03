@@ -109,20 +109,6 @@ def comment_item(request, pk):
     return redirect('item details', item.id)
 
 
-# class ItemDetailsView(views.DetailView):
-#     model = ArtItem
-#     template_name = 'art_items/item-details.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(ItemDetailsView, self).get_context_data(**kwargs)
-#         context['item'] = self.object
-#         context['comments'] = self.object.comment_set.all()
-
-
-    # def get_queryset(self):
-    #     return self.object.item.all()
-
-
 def item_details(request, pk):
     item = ArtItem.objects.get(pk=pk)
     item.likes_count = item.like_set.count()
@@ -140,6 +126,23 @@ def item_details(request, pk):
     }
 
     return render(request, 'art_items/item-details.html', context)
+
+
+# class ItemDetailsView(views.DetailView):
+#     model = ArtItem
+#     template_name = 'art_items/item-details.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(ItemDetailsView, self).get_context_data(**kwargs)
+#         context['item'] = self.object
+#         context['comments'] = self.object.comment_set.all()
+
+
+    # def get_queryset(self):
+    #     return self.object.item.all()
+
+
+
 
 
 
