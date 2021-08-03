@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class='text-center text-uppercase'>All art photos</h1>
     <div class="row">
-        {% for item in art_items %}
+        {% for item in artitem_list %}
             <div class="col-lg-4">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.description }}">

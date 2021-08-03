@@ -7,8 +7,8 @@
             <div class="col-lg-6">
                 <form style="border: 1px solid grey; margin: 10% 0%; padding: 10% 5%" method="post">
                     <h2>Sign up</h2>
-                    {{ form }}
                     {% csrf_token %}
+                    {{ form }}
                     <button class="btn btn-primary" type="submit">Sign up</button>
                     <span>Have an account?<a href="{% url 'sign in user' %}" style="color:orange">Sign in here</a></span>
                 </form>

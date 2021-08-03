@@ -3,11 +3,11 @@
 
 {% block content %}
     <div class="text-center">
-        <h1>Hello, {{ request.user }}!</h1>
+        <h1>Hello, {{ profile }}!</h1>
         <h5>This is your profile</h5>
-        {#        {{ profile.first_name }}#}
-        {#        {{ profile.last_name }}#}
-        {#        {{ profile.location }}#}
+{#                {{ profile.first_name }}#}
+{#                {{ profile.last_name }}#}
+{#                {{ profile.location }}#}
         {% if profile.profile_image %}
             <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
                  height="140">
