@@ -25,7 +25,7 @@ class EditArtItemForm(ArtItemForm):
 
     class Meta:
         model = ArtItem
-        fields = '__all__'
+        exclude = ('user',)
         widgets = {
             'type': forms.TextInput(
                 attrs={

@@ -1,5 +1,7 @@
 from django.contrib.auth import login, logout, get_user_model, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
+
 from django.urls import reverse_lazy, reverse
 
 from django.views.generic import CreateView, UpdateView
@@ -56,7 +58,6 @@ class ProfileDetailsView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         context['profile'] = self.get_object().user
 
         user_items = ArtItem.objects.filter(user_id=self.request.user.id)

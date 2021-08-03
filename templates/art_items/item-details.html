@@ -12,31 +12,28 @@
                 <h5><u>Owner:</u> {{ item.user }}</h5>
             </div>
             <p class="mt-2">Description: {{ item.description }}</p>
-            {#            {% if is_owner %}#}
-            <div>
-                <a href="{% url 'edit item' item.id %}" class="btn btn-success">Edit</a>
-                <a href="{% url 'delete item' item.id %}" class="btn btn-danger">Delete</a>
-            </div>
-            {#            {% else %}#}
-
-            <a href="{% url 'like item' item.id %}">
-                {% if is_liked %}
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                {% else %}
-                    <i class="far fa-heart" aria-hidden="true"></i>
-                {% endif %}
-            </a>
-            <p class="mt-2">Likes: {{ item.likes_count }}</p>
-            {#            {% endif %}#}
+            {% if is_owner %}
+                <div>
+                    <a href="{% url 'edit item' item.id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'delete item' item.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            {% else %}
+                <a href="{% url 'like item' item.id %}">
+                    {% if is_liked %}
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    {% else %}
+                        <i class="far fa-heart" aria-hidden="true"></i>
+                    {% endif %}
+                </a>
+                <p class="mt-2">Likes: {{ item.like_set.count }}</p>
+            {% endif %}
         </div>
     </div>
-    {#    </div>#}
     <div class="d-block" style="background-color: #f1e3e3; padding:2%">
         {% if comments %}
             {% for comment in comments %}
                 <div class="box">
                     <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>
-{#                    <h5><em>{{ comment.comment }}</em></h5>#}
                     <hr>
                 </div>
             {% endfor %}
@@ -46,13 +43,13 @@
             </div>
         {% endif %}
         <div class="box">
-            {#            {% if not is_owner %}#}
-            <form method="post" action="{% url 'comment item' item.id %}">
-                {% csrf_token %}
-                {{ comment_form }}
-                <button class="btn btn-primary mt-2" type="submit">Add comment</button>
-            </form>
-            {#            {% endif %}#}
+            {% if not is_owner %}
+                <form method="post" action="{% url 'comment item' item.id %}">
+                    {% csrf_token %}
+                    {{ comment_form }}
+                    <button class="btn btn-primary mt-2" type="submit">Add comment</button>
+                </form>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
