@@ -1,6 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from artify.accounts.models import ArtifyUser
+
+
 UserModel = get_user_model()
 
 
@@ -32,7 +35,7 @@ class ArtItem(models.Model):
     )
 
     user = models.ForeignKey(
-        UserModel,
+        ArtifyUser,
         on_delete=models.CASCADE,
     )
 
@@ -58,3 +61,5 @@ class Comment(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
+
+

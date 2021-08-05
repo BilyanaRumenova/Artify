@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'artify.accounts',
     'artify.common',
     'artify.art_items',
+    'artify.accounts',
 ]
 
 MIDDLEWARE = [

@@ -18,14 +18,9 @@ class ItemsListView(views.ListView):
 
 class CreateItemView(LoginRequiredMixin, views.CreateView):
     model = ArtItem
-    template_name = 'art_items/item_create.html'
     form_class = ArtItemForm
-    context_object_name = 'art_item'
-    # success_url = reverse_lazy('list items')
-
-    def get_success_url(self):
-        url = reverse_lazy('item details', kwargs={'pk': self.object.id})
-        return url
+    template_name = 'art_items/item_create.html'
+    success_url = reverse_lazy('list items')
 
     def form_valid(self, form):
         art_item = form.save(commit=False)
@@ -45,9 +40,9 @@ class UpdateItemView(LoginRequiredMixin, views.UpdateView):
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
 
-    # def get_success_url(self):
-    #     url = reverse_lazy('item details', kwargs={'pk': self.object.id})
-    #     return url
+    def get_success_url(self):
+        url = reverse_lazy('item details', kwargs={'pk': self.object.id})
+        return url
 
 
 class DeleteItemView(LoginRequiredMixin, views.DeleteView):
@@ -69,8 +64,9 @@ class ItemDetailsView(views.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        item = self.get_object()
-        context['comment_form'] = CommentForm(initial={'item_pk': item.id,})
+        item = context['item']
+
+        context['comment_form'] = CommentForm(initial={'item_pk': item.id, })
         context['comments'] = item.comment_set.all()
         context['is_liked'] = item.like_set.filter(user_id=self.request.user.id).exists()
         context['is_owner'] = item.user == self.request.user

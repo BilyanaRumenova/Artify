@@ -43,6 +43,35 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    items_in_portfolio = models.OneToOneField(
+        'art_items.ArtItem',
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+
+
+# class Portfolio(models.Model):
+#     owner = models.OneToOneField(
+#         Profile,
+#         on_delete=models.CASCADE,
+#         primary_key=True,
+#     )
+#     items_in_portfolio = models.ForeignKey(
+#         'art_items.ArtItem',
+#         on_delete=models.CASCADE,
+#     )
+
+
+class Follow(models.Model):
+    user_to_follow = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+    )
+    follower = models.ForeignKey(
+        ArtifyUser,
+        on_delete=models.CASCADE,
+    )
 
 
 from .signals import *

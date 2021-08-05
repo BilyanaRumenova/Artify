@@ -8,14 +8,15 @@
         <div class="d-inline p-2 w-50">
             <div class="d-flex justify-content-between">
                 <h5><u>Name:</u> {{ item.name }}</h5>
-                <h6><u>Type:</u> {{ item.type }}</h6>
-                <h5><u>Owner:</u> {{ item.user }}</h5>
+                <h5><u>Type:</u> {{ item.type }}</h5>
+                {#                <h5><u>Owner:</u> {{ item.user }}</h5>#}
+                <h5><u>Owner:</u> <a href="{% url 'other profile details' item.user.id %}">{{ item.user }}</a></h5>
             </div>
             <p class="mt-2">Description: {{ item.description }}</p>
             {% if is_owner %}
                 <div>
-                    <a href="{% url 'edit item' item.id %}" class="btn btn-success">Edit</a>
-                    <a href="{% url 'delete item' item.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'edit item' item.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete item' item.id %}" class="btn btn-outline-warning">Delete</a>
                 </div>
             {% else %}
                 <a href="{% url 'like item' item.id %}">
@@ -29,11 +30,13 @@
             {% endif %}
         </div>
     </div>
-    <div class="d-block" style="background-color: #f1e3e3; padding:2%">
+    <div class="d-block" style="background-color: #e7e5a7; padding:2%">
         {% if comments %}
             {% for comment in comments %}
                 <div class="box">
-                    <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>
+                    {#                    <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>#}
+                    <h5><a href="{% url 'other profile details' comment.user.id %}">{{ comment.user }}</a>:
+                        <em>{{ comment.comment }}</em></h5>
                     <hr>
                 </div>
             {% endfor %}

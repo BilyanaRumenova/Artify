@@ -36,22 +36,23 @@ class EditArtItemForm(ArtItemForm):
 
 
 class CommentForm(BootstrapFormMixin, forms.ModelForm):
-    item_pk = forms.IntegerField(
-        widget=forms.HiddenInput()
-    )
+    # item_pk = forms.IntegerField(
+    #     widget=forms.HiddenInput()
+    # )
 
     class Meta:
         model = Comment
-        fields = ('comment', 'item_pk')
+        fields = ('comment', )
+        # fields = ('comment', 'item_pk')
 
-    def save(self, commit=True):
-        item_pk = self.cleaned_data['item_pk']
-        item = ArtItem.objects.get(pk=item_pk)
-        comment = Comment(
-            comment=self.cleaned_data['comment'],
-            item=item,
-        )
-        if commit:
-            comment.save()
-
-        return comment
+    # def save(self, commit=True):
+    #     item_pk = self.cleaned_data['item_pk']
+    #     item = ArtItem.objects.get(pk=item_pk)
+    #     comment = Comment(
+    #         comment=self.cleaned_data['comment'],
+    #         item=item,
+    #     )
+    #     if commit:
+    #         comment.save()
+    #
+    #     return comment
