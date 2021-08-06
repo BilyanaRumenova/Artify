@@ -1,0 +1,10 @@
+<div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.description }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+        </div>
+    </div>
+</div>

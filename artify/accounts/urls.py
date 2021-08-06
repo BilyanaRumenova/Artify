@@ -1,14 +1,15 @@
 from django.urls import path
 
 from artify.accounts.views import SignUpView, SignInView, SignOutView, ProfileDetailsView, OtherProfileDetailsView, \
-    FollowProfileView
+    FollowProfileView, other_profile_details
 
 urlpatterns = (
     path('signin/', SignInView.as_view(), name='sign in user'),
     path('signup/', SignUpView.as_view(), name='sign up user'),
     path('signout/', SignOutView.as_view(), name='sign out user'),
     path('profile/', ProfileDetailsView.as_view(), name='profile details'),
-    path('profile/<int:pk>', OtherProfileDetailsView.as_view(), name='other profile details'),
+    # path('profile/<int:pk>', OtherProfileDetailsView.as_view(), name='other profile details'),
+    path('profile/<int:pk>', other_profile_details, name='other profile details'),
     path('follow/<int:pk>', FollowProfileView.as_view(), name='follow profile'),
     # path('signin/', sign_in_user, name='sign in user'),
     # path('signup/', sign_up_user, name='sign up user'),

@@ -1,13 +1,12 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 
-from artify.art_items.forms import ArtItemForm, EditArtItemForm, CommentForm
+
+from artify.art_items.forms import ArtItemForm, CommentForm
 from artify.art_items.models import ArtItem, Like, Comment
 
 from django.views import generic as views
-from django.views.generic.detail import SingleObjectMixin
 
 
 class ItemsListView(views.ListView):
@@ -101,6 +100,80 @@ class CommentItemView(LoginRequiredMixin, views.FormView):
         return redirect('item details', self.kwargs['pk'])
 
 
+class PhotographyItemsListView(LoginRequiredMixin, views.ListView):
+    model = ArtItem
+    template_name = 'categories/photography_list_items.html'
+    context_object_name = 'photography_items'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        super(PhotographyItemsListView, self).get_context_data(**kwargs)
+
+        photography_items = ArtItem.objects.filter(type='photography')
+        context = {
+            'photography_items': photography_items
+        }
+        return context
+
+
+class PaintingsListView(LoginRequiredMixin, views.ListView):
+    model = ArtItem
+    template_name = 'categories/paintings_list_items.html'
+    context_object_name = 'painting_items'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        super(PaintingsListView, self).get_context_data(**kwargs)
+
+        painting_items = ArtItem.objects.filter(type='painting')
+        context = {
+            'painting_items': painting_items
+        }
+        return context
+
+
+class PortraitsListView(LoginRequiredMixin, views.ListView):
+    model = ArtItem
+    template_name = 'categories/portrait_list_items.html'
+    context_object_name = 'portrait_items'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        super(PortraitsListView, self).get_context_data(**kwargs)
+
+        portrait_items = ArtItem.objects.filter(type='portrait')
+        context = {
+            'portrait_items': portrait_items
+        }
+        return context
+
+
+class FashionItemsListView(LoginRequiredMixin, views.ListView):
+    model = ArtItem
+    template_name = 'categories/fashion_items_list_view.html'
+    context_object_name = 'fashion_items'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        super(FashionItemsListView, self).get_context_data(**kwargs)
+
+        fashion_items = ArtItem.objects.filter(type='fashion')
+        context = {
+            'fashion_items': fashion_items
+        }
+        return context
+
+# def photography_list_items(request, **kwargs):
+#     photography_items = ArtItem.objects.filter(type='photography')
+#     context = {
+#         'photography_items': photography_items
+#     }
+#     return render(request, 'categories/photography_list_items.html', context)
+
+
+# def list_items(request):
+#     all_items = ArtItem.objects.all()
+#     context = {
+#         'art_items': all_items
+#     }
+#     return render(request, 'art_items/items_list.html', context)
+
 # @login_required
 # def like_item(request, pk):
 #     item_to_like = ArtItem.objects.get(pk=pk)
@@ -129,12 +202,6 @@ class CommentItemView(LoginRequiredMixin, views.FormView):
 #     return redirect('item details', item.id)
 
 
-# def list_items(request):
-#     all_items = ArtItem.objects.all()
-#     context = {
-#         'art_items': all_items
-#     }
-#     return render(request, 'art_items/items_list.html', context)
 
 
 # @login_required

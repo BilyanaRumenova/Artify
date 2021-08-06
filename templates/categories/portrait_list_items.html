@@ -1,0 +1,11 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1 class='text-center text-uppercase'>All portraits</h1>
+    <div class="row">
+        {% for item in portrait_items %}
+            {% include 'shared/album_content.html' %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

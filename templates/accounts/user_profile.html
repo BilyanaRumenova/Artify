@@ -5,9 +5,6 @@
     <div class="text-center">
         <h1>Hello, {{ profile.user }}!</h1>
         <h5>This is your profile</h5>
-{#                {{ profile.first_name }}#}
-{#                {{ profile.last_name }}#}
-{#                {{ profile.location }}#}
         {% if profile.profile_image %}
             <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
                  height="140">
@@ -19,7 +16,7 @@
             <form action="{% url 'profile details' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form }}
-                <button class="btn btn-success">Update</button>
+                <button class="btn btn-warning">Update</button>
             </form>
         </div>
     </div>

@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.core.exceptions import ValidationError
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import CreateView, DetailView, FormView
@@ -65,46 +65,6 @@ class ProfileDetailsView(LoginRequiredMixin, FormView):
         return context
 
 
-class OtherProfileDetailsView(FormView):
-    template_name = 'accounts/other profile.html'
-    form_class = ProfileForm
-    success_url = reverse_lazy('other profile details')
-
-    def form_valid(self, form):
-        profile = Profile.objects.get()
-        profile.profile_image = form.cleaned_data['profile_image']
-        profile.save()
-        return super().form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        profile = Profile.objects.get(pk=self.request.user.id)
-        user_items = ArtItem.objects.filter(user_id=self.request.user.id)
-
-        context['profile'] = profile
-        context['art_items'] = user_items
-
-        return context
-
-# class OtherProfileDetailsView(DetailView):
-#     model = Profile
-#     template_name = 'accounts/other profile.html'
-#     context_object_name = 'profile'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         profile = self.get_object()
-#
-#         context['is_followed'] = profile.follow_set.filter(follower=self.request.user.id).exists()
-#         context['is_owner'] = profile.user == self.request.user
-#
-#         # user_items = Portfolio.objects.filter(user_id=profile.user)
-#         # context['art_items'] = user_items
-#
-#         return context
-
-
 class FollowProfileView(View):
     def get(self, request, **kwargs):
         profile_to_follow = Profile.objects.get(pk=self.kwargs['pk'])
@@ -119,4 +79,25 @@ class FollowProfileView(View):
             )
             follow.save()
         return redirect('other profile details', profile_to_follow.user_id)
+
+
+class OtherProfileDetailsView(View):
+    pass
+
+def other_profile_details(request, pk):
+    other_profile = Profile.objects.get(pk=pk)
+    other_profile_items = ArtItem.objects.filter(user_id=other_profile.user_id)
+    is_owner = other_profile.user == request.user
+    if is_owner:
+        return redirect('profile details')
+    context = {
+
+        'profile': other_profile,
+        'art_items': other_profile_items,
+        'is_owner': is_owner,
+    }
+    return render(request, 'accounts/other profile.html', context)
+
+
+
 

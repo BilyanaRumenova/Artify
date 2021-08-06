@@ -4,6 +4,8 @@ from django.db import models
 
 from artify.accounts.managers import ArtifyUserManager
 
+from django.contrib.auth import get_user_model
+
 
 class ArtifyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
@@ -43,24 +45,6 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
-    items_in_portfolio = models.OneToOneField(
-        'art_items.ArtItem',
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True,
-    )
-
-
-# class Portfolio(models.Model):
-#     owner = models.OneToOneField(
-#         Profile,
-#         on_delete=models.CASCADE,
-#         primary_key=True,
-#     )
-#     items_in_portfolio = models.ForeignKey(
-#         'art_items.ArtItem',
-#         on_delete=models.CASCADE,
-#     )
 
 
 class Follow(models.Model):
@@ -72,6 +56,5 @@ class Follow(models.Model):
         ArtifyUser,
         on_delete=models.CASCADE,
     )
-
 
 from .signals import *
