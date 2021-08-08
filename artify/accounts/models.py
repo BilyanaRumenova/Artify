@@ -4,8 +4,6 @@ from django.db import models
 
 from artify.accounts.managers import ArtifyUserManager
 
-from django.contrib.auth import get_user_model
-
 
 class ArtifyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
@@ -48,7 +46,7 @@ class Profile(models.Model):
 
 
 class Follow(models.Model):
-    user_to_follow = models.ForeignKey(
+    profile_to_follow = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
     )

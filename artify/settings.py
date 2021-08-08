@@ -140,3 +140,4 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.ArtifyUser'
+

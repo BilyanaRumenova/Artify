@@ -9,7 +9,6 @@
             <div class="d-flex justify-content-between">
                 <h5><u>Name:</u> {{ item.name }}</h5>
                 <h5><u>Type:</u> {{ item.type }}</h5>
-                {#                <h5><u>Owner:</u> {{ item.user }}</h5>#}
                 <h5><u>Owner:</u> <a href="{% url 'other profile details' item.user.id %}">{{ item.user }}</a></h5>
             </div>
             <p class="mt-2">Description: {{ item.description }}</p>

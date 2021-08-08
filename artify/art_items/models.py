@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 from artify.accounts.models import ArtifyUser, Profile
@@ -25,10 +26,14 @@ class ArtItem(models.Model):
         choices=TYPE_CHOICES,
     )
     name = models.CharField(
+        MinLengthValidator(2),
         max_length=25,
+
     )
 
-    description = models.TextField()
+    description = models.TextField(
+        max_length=100,
+    )
 
     image = models.ImageField(
         upload_to='arts',
@@ -52,7 +57,10 @@ class Like(models.Model):
 
 
 class Comment(models.Model):
-    comment = models.TextField()
+    comment = models.TextField(
+        MinLengthValidator(2),
+        max_length=50,
+    )
     item = models.ForeignKey(
         ArtItem,
         on_delete=models.CASCADE,

@@ -22,3 +22,5 @@ def user_saved(sender, instance, **kwargs):
         user=instance,
     )
     profile.save()
+
+

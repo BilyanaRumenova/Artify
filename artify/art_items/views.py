@@ -56,7 +56,7 @@ class DeleteItemView(LoginRequiredMixin, views.DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class ItemDetailsView(views.DetailView):
+class ItemDetailsView(LoginRequiredMixin, views.DetailView):
     model = ArtItem
     template_name = 'art_items/item-details.html'
     context_object_name = 'item'
@@ -74,16 +74,16 @@ class ItemDetailsView(views.DetailView):
 
 
 class LikeItemView(LoginRequiredMixin, views.View):
-    def get(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         item_to_like = ArtItem.objects.get(pk=self.kwargs['pk'])
-        like_object_by_user = item_to_like.like_set.filter(user_id=request.user.id).first()
+        like_object_by_user = item_to_like.like_set.filter(user_id=self.request.user.id).first()
 
         if like_object_by_user:
             like_object_by_user.delete()
         else:
             like = Like(
                 item=item_to_like,
-                user=request.user,
+                user=self.request.user,
             )
             like.save()
         return redirect('item details', item_to_like.id)
@@ -91,6 +91,13 @@ class LikeItemView(LoginRequiredMixin, views.View):
 
 class CommentItemView(LoginRequiredMixin, views.FormView):
     form_class = CommentForm
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
     def form_valid(self, form):
         comment = form.save(commit=False)

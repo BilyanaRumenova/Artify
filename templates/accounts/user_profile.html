@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="text-center">
-        <h1>Hello, {{ profile.user }}!</h1>
+        <h1>Hello, {{ request.user }}!</h1>
         <h5>This is your profile</h5>
         {% if profile.profile_image %}
             <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
@@ -14,9 +14,15 @@
         {% endif %}
         <div class="w-50 m-auto">
             <form action="{% url 'profile details' %}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form }}
-                <button class="btn btn-warning">Update</button>
+                <div class="d-flex justify-content-between">
+                    <h5><u>First name:</u> {{ profile.first_name }}</h5>
+                    <h5><u>Last name:</u> {{ profile.last_name }}</h5>
+                    <h5><u>Location:</u> {{ profile.location }}</h5>
+                </div>
+                <div>
+                    <a href="{% url 'edit profile details' %}" class="btn btn-warning">Update</a>
+                </div>
+
             </form>
         </div>
     </div>
