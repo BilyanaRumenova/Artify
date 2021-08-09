@@ -1,10 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 
-
+from artify.accounts.models import Follow
 from artify.art_items.forms import ArtItemForm, CommentForm
-from artify.art_items.models import ArtItem, Like, Comment
+from artify.art_items.models import ArtItem, Like, Comment, Collection
 
 from django.views import generic as views
 
@@ -165,6 +165,20 @@ class FashionItemsListView(LoginRequiredMixin, views.ListView):
             'fashion_items': fashion_items
         }
         return context
+
+
+def home_page(request):
+    feed = ArtItem.objects.filter(
+        collection__owner_id=request.user
+    )
+
+    context = {
+        'feed': feed
+    }
+    return render(request, 'art_items/home_page.html', context)
+
+
+
 
 # def photography_list_items(request, **kwargs):
 #     photography_items = ArtItem.objects.filter(type='photography')

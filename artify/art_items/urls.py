@@ -2,7 +2,7 @@ from django.urls import path
 
 from artify.art_items.views import CreateItemView, ItemsListView, UpdateItemView, DeleteItemView, \
     ItemDetailsView, LikeItemView, CommentItemView, PhotographyItemsListView, PaintingsListView, PortraitsListView, \
-    FashionItemsListView
+    FashionItemsListView, home_page
 
 urlpatterns = (
     path('', ItemsListView.as_view(), name='list items'),
@@ -16,4 +16,5 @@ urlpatterns = (
     path('paintings/', PaintingsListView.as_view(), name='painting items'),
     path('portraits/', PortraitsListView.as_view(), name='portrait items'),
     path('fashion/', FashionItemsListView.as_view(), name='fashion items'),
+    path('home/', home_page, name='home'),
 )

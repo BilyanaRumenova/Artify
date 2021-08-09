@@ -127,12 +127,14 @@ def other_profile_details(request, pk):
     other_profile = Profile.objects.get(pk=pk)
     other_profile_items = ArtItem.objects.filter(user_id=other_profile.user_id)
     is_owner = other_profile.user == request.user
+    is_followed = other_profile.follow_set.filter(follower_id=request.user.id).exists()
     if is_owner:
         return redirect('profile details')
     context = {
         'profile': other_profile,
         'art_items': other_profile_items,
         'is_owner': is_owner,
+        'is_followed': is_followed,
     }
     return render(request, 'accounts/other profile.html', context)
 

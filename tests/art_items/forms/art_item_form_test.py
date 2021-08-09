@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 
-from artify.art_items.forms import ArtItemForm
+from artify.art_items.forms import ArtItemForm, CommentForm
 from tests.base.mixins import ArtItemTestUtils, UserTestUtils
 from tests.base.tests import ArtifyTestCase
 
@@ -31,6 +31,7 @@ class ArtItemFormTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         }
         form = ArtItemForm(data=form_data)
         self.assertTrue(form.is_valid())
+
 
 
 

@@ -49,10 +49,13 @@ class Follow(models.Model):
     profile_to_follow = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
+        # related_name='following',
     )
     follower = models.ForeignKey(
         ArtifyUser,
         on_delete=models.CASCADE,
+        # related_name='follower',
     )
+
 
 from .signals import *

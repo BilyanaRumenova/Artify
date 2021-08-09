@@ -1,9 +1,8 @@
-from unittest import TestCase
-
 from artify.art_items.forms import CommentForm
+from tests.base.mixins import ArtItemTestUtils, UserTestUtils
+from tests.base.tests import ArtifyTestCase
 
-
-class CommentTestForm(TestCase):
+class ArtItemCommentTestForm(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
 
     def test_commentFormWhenCommentValid__shouldPostComment(self):
         form_data = {

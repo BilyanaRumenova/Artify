@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
 from django.db import models
 
+import artify.accounts.models
 from artify.accounts.models import ArtifyUser, Profile
 
 
@@ -70,3 +71,14 @@ class Comment(models.Model):
     )
 
 
+class Collection(models.Model):
+   owner = models.OneToOneField(
+       UserModel,
+       # artify.accounts.models.Profile,
+       on_delete=models.CASCADE,
+       related_name="author",
+   )
+   content = models.ForeignKey(
+       ArtItem,
+       on_delete=models.CASCADE,
+   )
