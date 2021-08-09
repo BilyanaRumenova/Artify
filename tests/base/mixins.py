@@ -24,14 +24,7 @@ class UserTestUtils:
         return UserModel.objects.create(**kwargs)
 
     def create_profile(self, **kwargs):
-        profile = Profile.objects.create(
-            first_name='test',
-            last_name='testov',
-            profile_image='path/to/image.png',
-            location='sofia',
-            user=self.create_user(**kwargs)
-        )
-        return profile
+        return Profile.objects.create(**kwargs)
 
     def create_profile_with_follow(self, follower, **kwargs):
         profile_to_follow = self.create_profile(**kwargs)
@@ -41,15 +34,3 @@ class UserTestUtils:
         )
         return profile_to_follow
 
-
-    # def create_profile(self, **kwargs):
-    #     profile = Profile.objects.create(**kwargs)
-    #     return profile
-    #
-    # def create_profile_with_follower(self, follower, **kwargs):
-    #     profile_to_follow = self.create_profile(**kwargs)
-    #     Follow.objects.create(
-    #         user_to_follow=profile_to_follow,
-    #         follower=follower,
-    #     )
-    #     return profile_to_follow

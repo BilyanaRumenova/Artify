@@ -26,9 +26,8 @@ class ArtItem(models.Model):
         choices=TYPE_CHOICES,
     )
     name = models.CharField(
-        MinLengthValidator(2),
+        validators=[MinLengthValidator(2)],
         max_length=25,
-
     )
 
     description = models.TextField(
@@ -58,7 +57,7 @@ class Like(models.Model):
 
 class Comment(models.Model):
     comment = models.TextField(
-        MinLengthValidator(2),
+        validators=[MinLengthValidator(2)],
         max_length=50,
     )
     item = models.ForeignKey(

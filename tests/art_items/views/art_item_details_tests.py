@@ -7,14 +7,9 @@ from tests.base.tests import ArtifyTestCase
 
 class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
     def test_getArtItemDetails_whenArtItemDoesNotExistsAndIsOwner_shouldReturnDetailsForOwner(self):
-        pass
-        # self.client.force_login(self.user)
-        #
-        # response = self.client.get(reverse('item details', kwargs={
-        #     'pk': self.id,
-        # }))
-        #
-        # self.assertEqual(404, response.status_code)
+        self.client.force_login(self.user)
+        self.assertFalse(ArtItem.objects.filter(
+            name='test').exists())
 
 
     def test_getArtItemDetails_whenArtItemExistsAndIsOwnerAndNotLiked_shouldReturnDetailsForOwner(self):
@@ -34,6 +29,7 @@ class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertTrue(response.context['is_owner'])
         self.assertFalse(response.context['is_liked'])
 
+
     def test_getArtItemDetails_whenArtItemExistsAndIsNotOwnerAndNotLiked_shouldReturnDetailsForOwner(self):
         self.client.force_login(self.user)
         item_user = self.create_user(email='item@user.com', password='1234test')
@@ -52,9 +48,10 @@ class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertFalse(response.context['is_owner'])
         self.assertFalse(response.context['is_liked'])
 
+
     def test_getArtItemDetails_whenArtExistsAndIsNotOwnerAndLiked_shouldReturnDetailsForOwner(self):
         self.client.force_login(self.user)
-        item_user = self.create_user(email='pet@user.com', password='12345qwe')
+        item_user = self.create_user(email='item@user.com', password='12345qwe')
         item = self.create_item_with_like(
             like_user=self.user,
             type=ArtItem.TYPE_CHOICE_PORTRAIT,

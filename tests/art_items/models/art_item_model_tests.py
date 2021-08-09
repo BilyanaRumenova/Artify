@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from django.test import TestCase, Client
 
 from artify.art_items.models import ArtItem
-from django.test import TestCase, Client
 
 UserModel = get_user_model()
 
@@ -24,25 +24,34 @@ class ArtItemModelTest(TestCase):
         self.assertTrue(isinstance(item, ArtItem))
 
     def test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='testtesttesttesttesttesttesttesttesttesttesttesttest',
+                       description='description test',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
         with self.assertRaises(ValidationError):
-            item = ArtItem(name='testtesttesttesttesttesttesttesttesttesttesttesttest',)
             item.full_clean()
 
     def test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='t',
+                       description='description test',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
         with self.assertRaises(ValidationError):
-            item = ArtItem(name='t',)
             item.full_clean()
 
     def test_artItemDescriptionIsTooLongCreationIsInvalid__shouldNotCreateArtItem(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='test name',
+                       description='testtesttesttesttesttesttesttesttesttesttesttesttest'
+                                   'testtesttesttesttesttesttesttesttesttesttesttesttest'
+                                   'testtesttesttesttesttesttesttesttesttesttesttesttest'
+                                   'testtesttesttesttesttesttesttesttesttesttesttesttest',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
         with self.assertRaises(ValidationError):
-            item = ArtItem(description='testtesttesttesttesttesttesttesttesttesttesttesttest'
-                                       'testtesttesttesttesttesttesttesttesttesttesttesttest'
-                                       'testtesttesttesttesttesttesttesttesttesttesttesttest'
-                                       'testtesttesttesttesttesttesttesttesttesttesttesttest'
-                                       'testtesttesttesttesttesttesttesttesttesttesttesttest',)
             item.full_clean()
-
-
-
-
-

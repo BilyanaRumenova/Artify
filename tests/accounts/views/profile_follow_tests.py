@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
+from django.dispatch import Signal
 from django.urls import reverse
 
-from artify.accounts.models import Follow, Profile
+from artify.accounts.models import Follow, Profile, ArtifyUser
 from tests.base.mixins import ArtItemTestUtils, UserTestUtils
 from tests.base.tests import ArtifyTestCase
 
@@ -24,22 +25,27 @@ class FollowProfileViewTests(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         ).exists()
         self.assertTrue(follow_exists)
 
-    # def test_followProfile__whenProfileAlreadyFollowed__shouldDeleteFollow(self):
-    #     self.client.force_login(self.user)
-    #     user_to_follow = self.create_user(email='item@user.bg', password='1234test')
-    #     profile_to_follow = self.create_profile_with_follow(
-    #         follower=self.user,
-    #
-    #     )
-    #     response = self.client.get(reverse('follow profile', kwargs={'pk': profile_to_follow.pk}))
-    #     self.assertEqual(302, response.status_code)
-    #
-    #     follow_exists = Follow.objects.filter(
-    #         profile_to_follow_id=profile_to_follow.pk,
-    #         follower_id=self.user.id
-    #     ).exists()
-    #     self.assertFalse(follow_exists)
-    #
-    #
-    #
+    def test_followProfile__whenProfileAlreadyFollowed__shouldDeleteFollow(self):
+        self.client.force_login(self.user)
+
+        profile_to_follow = self.create_profile_with_follow(
+            follower=self.user,
+            first_name='test',
+            last_name='testov',
+            profile_image='path/to/image.png',
+            location='test location',
+            user=self.create_user(email='item@user.bg', password='1234test'),
+        )
+        # Signal.disconnect(profile_to_follow, receiver=None, sender=None, dispatch_uid=None)
+        response = self.client.get(reverse('follow profile', kwargs={'pk': profile_to_follow.pk}))
+        self.assertEqual(302, response.status_code)
+
+        follow_exists = Follow.objects.filter(
+            profile_to_follow_id=profile_to_follow.pk,
+            follower_id=self.user.id
+        ).exists()
+        self.assertFalse(follow_exists)
+
+
+
 

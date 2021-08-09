@@ -130,7 +130,6 @@ def other_profile_details(request, pk):
     if is_owner:
         return redirect('profile details')
     context = {
-
         'profile': other_profile,
         'art_items': other_profile_items,
         'is_owner': is_owner,

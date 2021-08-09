@@ -1,9 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
-from django.http import HttpRequest
 from django.test import TestCase, Client
 
-from artify.art_items.forms import CommentForm
 from artify.art_items.models import ArtItem, Comment
 
 UserModel = get_user_model()

@@ -9,7 +9,7 @@ from artify.art_items.models import ArtItem, Like, Comment
 from django.views import generic as views
 
 
-class ItemsListView(views.ListView):
+class ItemsListView(LoginRequiredMixin, views.ListView):
     model = ArtItem
     template_name = 'art_items/items_list.html'
     context_object_name = 'art_items'
@@ -113,7 +113,7 @@ class PhotographyItemsListView(LoginRequiredMixin, views.ListView):
     context_object_name = 'photography_items'
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        super(PhotographyItemsListView, self).get_context_data(**kwargs)
+        super().get_context_data(**kwargs)
 
         photography_items = ArtItem.objects.filter(type='photography')
         context = {
@@ -128,7 +128,7 @@ class PaintingsListView(LoginRequiredMixin, views.ListView):
     context_object_name = 'painting_items'
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        super(PaintingsListView, self).get_context_data(**kwargs)
+        super().get_context_data(**kwargs)
 
         painting_items = ArtItem.objects.filter(type='painting')
         context = {
@@ -143,7 +143,7 @@ class PortraitsListView(LoginRequiredMixin, views.ListView):
     context_object_name = 'portrait_items'
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        super(PortraitsListView, self).get_context_data(**kwargs)
+        super().get_context_data(**kwargs)
 
         portrait_items = ArtItem.objects.filter(type='portrait')
         context = {
@@ -158,7 +158,7 @@ class FashionItemsListView(LoginRequiredMixin, views.ListView):
     context_object_name = 'fashion_items'
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        super(FashionItemsListView, self).get_context_data(**kwargs)
+        super().get_context_data(**kwargs)
 
         fashion_items = ArtItem.objects.filter(type='fashion')
         context = {

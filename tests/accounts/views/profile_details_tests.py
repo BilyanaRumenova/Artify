@@ -14,6 +14,7 @@ class ProfileDetailsTest(TestCase):
         self.client = Client()
         self.user = UserModel.objects.create_user(email='bilyana@test.bg', password='test1234')
 
+
     def test_getDetails__whenLoggedInUserWithoutArtItems_shouldGetDetailsWithoutArtItems(self):
         self.client.force_login(self.user)
 
