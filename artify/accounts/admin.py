@@ -26,3 +26,4 @@ class ArtifyUserAdmin(UserAdmin):
     )
 
     readonly_fields = ('date_joined',)
+

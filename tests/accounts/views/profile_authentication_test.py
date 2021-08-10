@@ -2,13 +2,15 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 
+from artify.accounts.models import ArtifyUser
+
 UserModel = get_user_model()
 
 
 class Authentication(TestCase):
     def setUp(self):
         self.client = Client()
-        self.user = UserModel.objects.create_user(email='bilyana@test.bg', password='test1234')
+        self.user = ArtifyUser.objects.create_user(email='bilyana@test.bg', password='test1234')
 
     def test_sign_up(self):
         response = self.client.post(reverse('sign up user'))

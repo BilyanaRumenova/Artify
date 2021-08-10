@@ -1,5 +1,5 @@
 from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import User, PermissionsMixin
+from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
 from artify.accounts.managers import ArtifyUserManager
@@ -15,10 +15,9 @@ class ArtifyUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(
         auto_now_add=True,
     )
+    USERNAME_FIELD = 'email'
 
     objects = ArtifyUserManager()
-
-    USERNAME_FIELD = 'email'
 
 
 class Profile(models.Model):
@@ -42,19 +41,6 @@ class Profile(models.Model):
         ArtifyUser,
         on_delete=models.CASCADE,
         primary_key=True,
-    )
-
-
-class Follow(models.Model):
-    profile_to_follow = models.ForeignKey(
-        Profile,
-        on_delete=models.CASCADE,
-        # related_name='following',
-    )
-    follower = models.ForeignKey(
-        ArtifyUser,
-        on_delete=models.CASCADE,
-        # related_name='follower',
     )
 
 

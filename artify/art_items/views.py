@@ -1,21 +1,20 @@
+from django import views
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, FormView
 
-from artify.accounts.models import Follow
 from artify.art_items.forms import ArtItemForm, CommentForm
-from artify.art_items.models import ArtItem, Like, Comment, Collection
-
-from django.views import generic as views
+from artify.art_items.models import ArtItem, Like, Follow
 
 
-class ItemsListView(LoginRequiredMixin, views.ListView):
+class ItemsListView(LoginRequiredMixin, ListView):
     model = ArtItem
     template_name = 'art_items/items_list.html'
     context_object_name = 'art_items'
 
 
-class CreateItemView(LoginRequiredMixin, views.CreateView):
+class CreateItemView(LoginRequiredMixin, CreateView):
     model = ArtItem
     form_class = ArtItemForm
     template_name = 'art_items/item_create.html'
@@ -28,7 +27,7 @@ class CreateItemView(LoginRequiredMixin, views.CreateView):
         return super().form_valid(form)
 
 
-class UpdateItemView(LoginRequiredMixin, views.UpdateView):
+class UpdateItemView(LoginRequiredMixin, UpdateView):
     model = ArtItem
     template_name = 'art_items/item_edit.html'
     form_class = ArtItemForm
@@ -44,7 +43,7 @@ class UpdateItemView(LoginRequiredMixin, views.UpdateView):
         return url
 
 
-class DeleteItemView(LoginRequiredMixin, views.DeleteView):
+class DeleteItemView(LoginRequiredMixin, DeleteView):
     model = ArtItem
     template_name = 'art_items/item_delete.html'
     success_url = reverse_lazy('list items')
@@ -56,7 +55,7 @@ class DeleteItemView(LoginRequiredMixin, views.DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class ItemDetailsView(LoginRequiredMixin, views.DetailView):
+class ItemDetailsView(LoginRequiredMixin, DetailView):
     model = ArtItem
     template_name = 'art_items/item-details.html'
     context_object_name = 'item'
@@ -89,7 +88,7 @@ class LikeItemView(LoginRequiredMixin, views.View):
         return redirect('item details', item_to_like.id)
 
 
-class CommentItemView(LoginRequiredMixin, views.FormView):
+class CommentItemView(LoginRequiredMixin, FormView):
     form_class = CommentForm
 
     def post(self, request, *args, **kwargs):
@@ -107,7 +106,7 @@ class CommentItemView(LoginRequiredMixin, views.FormView):
         return redirect('item details', self.kwargs['pk'])
 
 
-class PhotographyItemsListView(LoginRequiredMixin, views.ListView):
+class PhotographyItemsListView(LoginRequiredMixin, ListView):
     model = ArtItem
     template_name = 'categories/photography_list_items.html'
     context_object_name = 'photography_items'
@@ -122,7 +121,7 @@ class PhotographyItemsListView(LoginRequiredMixin, views.ListView):
         return context
 
 
-class PaintingsListView(LoginRequiredMixin, views.ListView):
+class PaintingsListView(LoginRequiredMixin, ListView):
     model = ArtItem
     template_name = 'categories/paintings_list_items.html'
     context_object_name = 'painting_items'
@@ -137,7 +136,7 @@ class PaintingsListView(LoginRequiredMixin, views.ListView):
         return context
 
 
-class PortraitsListView(LoginRequiredMixin, views.ListView):
+class PortraitsListView(LoginRequiredMixin, ListView):
     model = ArtItem
     template_name = 'categories/portrait_list_items.html'
     context_object_name = 'portrait_items'
@@ -152,7 +151,7 @@ class PortraitsListView(LoginRequiredMixin, views.ListView):
         return context
 
 
-class FashionItemsListView(LoginRequiredMixin, views.ListView):
+class FashionItemsListView(LoginRequiredMixin, ListView):
     model = ArtItem
     template_name = 'categories/fashion_items_list_view.html'
     context_object_name = 'fashion_items'
@@ -168,16 +167,17 @@ class FashionItemsListView(LoginRequiredMixin, views.ListView):
 
 
 def home_page(request):
-    feed = ArtItem.objects.filter(
-        collection__owner_id=request.user
-    )
+    """returns queryset"""
+    followed_people = Follow.objects.filter(follower=request.user).values('profile_to_follow')
+    followed_people_id = [followed_p['profile_to_follow'] for followed_p in followed_people]
 
-    context = {
-        'feed': feed
-    }
-    return render(request, 'art_items/home_page.html', context)
+    for id in followed_people_id:
+        feed = ArtItem.objects.filter(user_id=id)
 
-
+        context = {
+            'feed': feed,
+        }
+        return render(request, 'art_items/home_page.html', context)
 
 
 # def photography_list_items(request, **kwargs):

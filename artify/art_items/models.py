@@ -2,9 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
 from django.db import models
 
-import artify.accounts.models
 from artify.accounts.models import ArtifyUser, Profile
-
 
 UserModel = get_user_model()
 
@@ -21,7 +19,6 @@ class ArtItem(models.Model):
         (TYPE_CHOICE_PORTRAIT, 'Portrait'),
         (TYPE_CHOICE_FASHION, 'Fashion'),
     )
-
     type = models.CharField(
         max_length=20,
         choices=TYPE_CHOICES,
@@ -30,15 +27,12 @@ class ArtItem(models.Model):
         validators=[MinLengthValidator(2)],
         max_length=25,
     )
-
     description = models.TextField(
         max_length=100,
     )
-
     image = models.ImageField(
         upload_to='arts',
     )
-
     user = models.ForeignKey(
         UserModel,
         on_delete=models.CASCADE,
@@ -71,14 +65,12 @@ class Comment(models.Model):
     )
 
 
-class Collection(models.Model):
-   owner = models.OneToOneField(
-       UserModel,
-       # artify.accounts.models.Profile,
-       on_delete=models.CASCADE,
-       related_name="author",
-   )
-   content = models.ForeignKey(
-       ArtItem,
-       on_delete=models.CASCADE,
-   )
+class Follow(models.Model):
+    profile_to_follow = models.ForeignKey(
+        Profile,
+        on_delete=models.CASCADE,
+    )
+    follower = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
+    )

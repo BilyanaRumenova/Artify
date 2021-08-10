@@ -12,5 +12,3 @@ class ArtifyItemAdmin(admin.ModelAdmin):
         return obj.like_set.count()
 
 
-
-# admin.site.register(ArtItem, ArtItemAdmin)

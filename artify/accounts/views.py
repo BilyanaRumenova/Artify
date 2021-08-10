@@ -1,15 +1,16 @@
-from django.contrib.auth import login, logout, get_user_model
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import CreateView, UpdateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 
 from artify.accounts.forms import SignUpForm, SignInForm, ProfileForm
-from artify.accounts.models import Profile, Follow, ArtifyUser
-from artify.art_items.models import ArtItem
+from artify.accounts.models import Profile
+from artify.art_items.models import ArtItem, Follow
+from django.contrib.auth import get_user_model
 
 UserModel = get_user_model()
 
@@ -105,14 +106,15 @@ class EditProfileDetailsView(LoginRequiredMixin, UpdateView):
 class FollowProfileView(LoginRequiredMixin, View):
     def get(self, request, **kwargs):
         profile_to_follow = Profile.objects.get(pk=self.kwargs['pk'])
-        follow_object_by_user = profile_to_follow.follow_set.filter(follower_id=request.user).first()
+        current_profile = UserModel.objects.get(pk=request.user.id)
+        follow_object_by_user = profile_to_follow.follow_set.filter(follower_id=current_profile).first()
 
         if follow_object_by_user:
             follow_object_by_user.delete()
         else:
             follow = Follow(
                 profile_to_follow=profile_to_follow,
-                follower=request.user,
+                follower=current_profile,
             )
             follow.save()
         return redirect('other profile details', profile_to_follow.user_id)
@@ -127,7 +129,9 @@ def other_profile_details(request, pk):
     other_profile = Profile.objects.get(pk=pk)
     other_profile_items = ArtItem.objects.filter(user_id=other_profile.user_id)
     is_owner = other_profile.user == request.user
+
     is_followed = other_profile.follow_set.filter(follower_id=request.user.id).exists()
+
     if is_owner:
         return redirect('profile details')
     context = {
@@ -137,5 +141,6 @@ def other_profile_details(request, pk):
         'is_followed': is_followed,
     }
     return render(request, 'accounts/other profile.html', context)
+
 
 

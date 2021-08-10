@@ -1,8 +1,8 @@
 from django.urls import path
 
-from artify.art_items.views import CreateItemView, ItemsListView, UpdateItemView, DeleteItemView, \
-    ItemDetailsView, LikeItemView, CommentItemView, PhotographyItemsListView, PaintingsListView, PortraitsListView, \
-    FashionItemsListView, home_page
+from artify.art_items.views import ItemsListView, CreateItemView, UpdateItemView, DeleteItemView, ItemDetailsView, \
+    LikeItemView, CommentItemView, PhotographyItemsListView, PaintingsListView, PortraitsListView, FashionItemsListView, \
+    home_page
 
 urlpatterns = (
     path('', ItemsListView.as_view(), name='list items'),

@@ -12,8 +12,5 @@ urlpatterns = (
     # path('profile/<int:pk>', OtherProfileDetailsView.as_view(), name='other profile details'),
     path('profile/<int:pk>', other_profile_details, name='other profile details'),
     path('follow/<int:pk>', FollowProfileView.as_view(), name='follow profile'),
-    # path('signin/', sign_in_user, name='sign in user'),
-    # path('signup/', sign_up_user, name='sign up user'),
-    # path('signout/', sign_out_user, name='sign out user'),
-    # path('profile/', profile_details, name='profile details'),
+
 )
