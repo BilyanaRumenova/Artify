@@ -1,4 +1,4 @@
-#!F:\Python\Django Projects\artify\venv\Scripts\python.exe
+#!F:\Python\Django Projects\artify_app\venv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
