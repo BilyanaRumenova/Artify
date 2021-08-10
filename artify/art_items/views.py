@@ -167,18 +167,16 @@ class FashionItemsListView(LoginRequiredMixin, ListView):
 
 
 def home_page(request):
-    """returns queryset"""
     followed_people = Follow.objects.filter(follower=request.user).values('profile_to_follow')
     followed_people_id = [followed_p['profile_to_follow'] for followed_p in followed_people]
-
+    feed = []
     for id in followed_people_id:
-        feed = ArtItem.objects.filter(user_id=id)
+        feed.append(ArtItem.objects.filter(user_id=id).first())
 
-        context = {
-            'feed': feed,
-        }
-        return render(request, 'art_items/home_page.html', context)
-
+    context = {
+        'feed': feed,
+    }
+    return render(request, 'art_items/home_page.html', context)
 
 # def photography_list_items(request, **kwargs):
 #     photography_items = ArtItem.objects.filter(type='photography')

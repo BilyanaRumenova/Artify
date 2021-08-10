@@ -1,45 +1,26 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-    <h1 class='text-center text-uppercase'>Your feed</h1>
-    <div class="row">
-    {% for item in feed %}
-        <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-            <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.description }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
-                <p class="card-text">{{ item.description }}</p>
-                <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
-            </div>
-        </div>
-    {% endfor %}
-    {% for item in posts_list %}
-        <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ item }}" class="card-img-top" alt="{{ item.pk }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
-                    <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+    {% if feed %}
+        <h1 class='text-center text-uppercase'>Your feed</h1>
+        <div class="row">
+        {% for item in feed %}
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.description }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-    {% for item in feed2 %}
-        <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ item }}" class="card-img-top" alt="{{ item.pk }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
-                    <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <h1 class='text-center text-uppercase'>You still have nothing in your feed</h1>
+    {% endif %}
 </div>
-
 {% endblock %}
+
 
 
 
