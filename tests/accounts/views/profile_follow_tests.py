@@ -1,8 +1,9 @@
+import factory
 from django.contrib.auth import get_user_model
-from django.dispatch import Signal
 from django.urls import reverse
 
-from artify.accounts.models import Follow, Profile, ArtifyUser
+from artify.accounts import signals
+from artify.art_items.models import Follow
 from tests.base.mixins import ArtItemTestUtils, UserTestUtils
 from tests.base.tests import ArtifyTestCase
 
@@ -25,6 +26,7 @@ class FollowProfileViewTests(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         ).exists()
         self.assertTrue(follow_exists)
 
+    @factory.django.mute_signals(signals.post_save)
     def test_followProfile__whenProfileAlreadyFollowed__shouldDeleteFollow(self):
         self.client.force_login(self.user)
 
@@ -36,7 +38,7 @@ class FollowProfileViewTests(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
             location='test location',
             user=self.create_user(email='item@user.bg', password='1234test'),
         )
-        # Signal.disconnect(profile_to_follow, receiver=None, sender=None, dispatch_uid=None)
+
         response = self.client.get(reverse('follow profile', kwargs={'pk': profile_to_follow.pk}))
         self.assertEqual(302, response.status_code)
 
@@ -45,6 +47,7 @@ class FollowProfileViewTests(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
             follower_id=self.user.id
         ).exists()
         self.assertFalse(follow_exists)
+
 
 
 

@@ -8,8 +8,11 @@ from tests.base.tests import ArtifyTestCase
 class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
     def test_getArtItemDetails_whenArtItemDoesNotExistsAndIsOwner_shouldReturnDetailsForOwner(self):
         self.client.force_login(self.user)
-        self.assertFalse(ArtItem.objects.filter(
-            name='test').exists())
+        response = self.client.get(reverse('item details', kwargs={
+            'pk': 4,
+        }))
+        self.assertEqual(404, response.status_code)
+        self.assertFalse(ArtItem.objects.filter(name='test').exists())
 
 
     def test_getArtItemDetails_whenArtItemExistsAndIsOwnerAndNotLiked_shouldReturnDetailsForOwner(self):

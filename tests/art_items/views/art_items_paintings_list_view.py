@@ -62,3 +62,4 @@ class ArtItemPaintingsListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCa
         self.assertNotIn(item_1, response.context['painting_items'])
         self.assertNotIn(item_2, response.context['painting_items'])
         self.assertEqual(0, len(response.context['painting_items']))
+

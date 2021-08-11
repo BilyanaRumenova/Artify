@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.test import Client
 
 from artify.art_items.models import ArtItem, Comment
@@ -24,11 +25,53 @@ class CommentViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
             image='path/to/image.png',
             user=item_user,
         )
-        Comment.objects.create(comment='test',
-                               item=art_item,
-                               user=self.user
-                               )
-        self.assertTrue(Comment.objects.filter(comment='test').exists())
-        self.assertFalse(Comment.objects.filter(comment='test3').exists())
+        comment = Comment(comment='test',
+                          item=art_item,
+                          user=self.user
+                          )
+        if comment.full_clean():
+            comment.save()
+            self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 1)
+            self.assertTrue(Comment.objects.filter(comment='test').exists())
 
+    def test_PostCommentWhenSignedInWithTooLongComment__shouldNotPostComment(self):
+        self.client.force_login(self.user)
+        item_user = self.create_user(email='item@user.com', password='12345qwe')
+        art_item = self.create_item(
+            type=ArtItem.TYPE_CHOICE_PORTRAIT,
+            name='Test Art Item',
+            description='Test item description',
+            image='path/to/image.png',
+            user=item_user,
+        )
+        comment = Comment(comment='testtesttesttesttesttesttesttesttesttesttesttesttestfdfdf',
+                          item=art_item,
+                          user=self.user
+                          )
 
+        with self.assertRaises(ValidationError):
+            if comment.full_clean():
+                comment.save()
+        self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 0)
+        self.assertFalse(Comment.objects.filter(comment=comment.comment).exists())
+
+    def test_PostCommentWhenSignedInWithTooShortComment__shouldNotPostComment(self):
+        self.client.force_login(self.user)
+        item_user = self.create_user(email='item@user.com', password='12345qwe')
+        art_item = self.create_item(
+            type=ArtItem.TYPE_CHOICE_PORTRAIT,
+            name='Test Art Item',
+            description='Test item description',
+            image='path/to/image.png',
+            user=item_user,
+        )
+        comment = Comment(comment='t',
+                          item=art_item,
+                          user=self.user
+                          )
+
+        with self.assertRaises(ValidationError):
+            if comment.full_clean():
+                comment.save()
+        self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 0)
+        self.assertFalse(Comment.objects.filter(comment=comment.comment).exists())

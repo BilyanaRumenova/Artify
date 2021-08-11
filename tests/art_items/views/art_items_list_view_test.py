@@ -33,6 +33,12 @@ class ArtItemListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertIn(item_2, response.context['art_items'])
         self.assertEqual(2, len(response.context['art_items']))
 
+    def test_getArtItemsListWhenEmpty__shouldReturnEmptyView(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('list items'))
+
+        self.assertEqual(response.context['art_items'].count(), 0)
+
     def test_getArtItemsListWhenNotSignedIn__shouldRaiseError(self):
         response = self.client.get(reverse('list items'), follow=True)
         self.assertEqual(404, response.status_code)

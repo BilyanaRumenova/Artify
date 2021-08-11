@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 
-from artify.accounts.models import Follow, Profile, ArtifyUser
-from artify.art_items.models import ArtItem, Like
+from artify.accounts.models import Profile
+from artify.art_items.models import ArtItem, Like, Follow
 
 UserModel = get_user_model()
 

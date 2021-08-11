@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.db import models
 
 from artify.accounts.models import ArtifyUser, Profile
@@ -55,8 +55,8 @@ class Like(models.Model):
 
 class Comment(models.Model):
     comment = models.TextField(
-        validators=[MinLengthValidator(2)],
-        max_length=50,
+        validators=[MinLengthValidator(2),
+                    MaxLengthValidator(50)],
     )
     item = models.ForeignKey(
         ArtItem,
@@ -68,7 +68,7 @@ class Comment(models.Model):
     )
 
     def __str__(self):
-        return f'{self.item}'
+        return f'{self.comment}'
 
 
 class Follow(models.Model):

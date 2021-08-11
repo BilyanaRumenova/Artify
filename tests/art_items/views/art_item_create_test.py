@@ -19,8 +19,18 @@ class CreateNewArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         response = self.client.get(reverse('create item'), follow=True)
         self.assertEqual(404, response.status_code)
 
-
     def test_new_item_form_is_valid(self):
         self.client.login()
-        response = self.client.get(reverse('sign in user'))
-        self.assertEqual(200, response.status_code)
+        response = self.client.get(reverse('create item'))
+        self.assertEqual(302, response.status_code)
+
+        item = self.create_item(
+            type='photography',
+            name='test item',
+            description='test description',
+            image='path/to/image.png',
+        )
+        if item.objects.full_clean():
+            item.save()
+            self.assertEqual(response.status_code, 200)
+            # self.assertTrue(item)
