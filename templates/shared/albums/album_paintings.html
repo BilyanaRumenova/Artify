@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="col-lg-4 col-sm-6 mb-4">
+    <!-- Portfolio album 2-->
+    <div class="portfolio-item">
+        <a href="{% url 'painting items' %}" class="portfolio-link" data-bs-toggle="modal ">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+            </div>
+            <img class="img-fluid" src="{% static 'assets/img/portfolio/paintings.jpg' %}" alt="..."/>
+        </a>
+        <div class="portfolio-caption">
+            <div class="portfolio-caption-heading">Paintings</div>
+        </div>
+    </div>
+</div>

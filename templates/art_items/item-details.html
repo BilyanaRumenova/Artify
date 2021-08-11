@@ -10,8 +10,9 @@
                 <h5><u>Name:</u> {{ item.name }}</h5>
                 <h5><u>Type:</u> {{ item.type }}</h5>
                 <h5><u>Owner:</u> <a href="{% url 'other profile details' item.user.id %}">{{ item.user }}</a></h5>
+
             </div>
-            <p class="mt-2">Description: {{ item.description }}</p>
+            <p class="mt-2"></p><h5><u>Description:</u> {{ item.description }}</h5>
             {% if is_owner %}
                 <div>
                     <a href="{% url 'edit item' item.id %}" class="btn btn-warning">Edit</a>
@@ -33,7 +34,6 @@
         {% if comments %}
             {% for comment in comments %}
                 <div class="box">
-                    {#                    <h5><u>{{ comment.user }}</u>: <em>{{ comment.comment }}</em></h5>#}
                     <h5><a href="{% url 'other profile details' comment.user.id %}">{{ comment.user }}</a>:
                         <em>{{ comment.comment }}</em></h5>
                     <hr>

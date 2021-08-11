@@ -38,6 +38,9 @@ class ArtItem(models.Model):
         on_delete=models.CASCADE,
     )
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 class Like(models.Model):
     item = models.ForeignKey(
@@ -63,6 +66,9 @@ class Comment(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
+
+    def __str__(self):
+        return f'{self.item}'
 
 
 class Follow(models.Model):

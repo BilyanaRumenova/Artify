@@ -21,5 +21,5 @@ class SignInForm(BootstrapFormMixin, AuthenticationForm):
 class ProfileForm(BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('items_in_portfolio', 'user',)
+        exclude = ('user', 'is_complete',)
 

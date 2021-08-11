@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
+from artify.accounts.models import Profile
+
 UserModel = get_user_model()
 
 
@@ -26,4 +28,9 @@ class ArtifyUserAdmin(UserAdmin):
     )
 
     readonly_fields = ('date_joined',)
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    pass
 

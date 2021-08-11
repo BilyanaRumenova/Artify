@@ -1,6 +1,9 @@
 {% extends 'shared/base.html' %}
+{% load profile_complete_notification %}
 
 {% block content %}
+    {% profile_complete_notification %}
+
     <h1 class='text-center text-uppercase'>All art photos</h1>
     <div class="row">
         {% for item in art_items %}

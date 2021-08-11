@@ -1,5 +1,9 @@
 {% extends 'shared/base.html' %}
+{% load profile_complete_notification %}
+
 {% block content %}
+    {% profile_complete_notification %}
+
     {% if feed %}
         <h1 class='text-center text-uppercase'>Your feed</h1>
         <div class="row">
