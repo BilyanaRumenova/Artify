@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artify.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/artify/accounts/migrations/0002_delete_follow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/artify/accounts/migrations/0003_profile_is_complete.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/artify/art_items/migrations/0002_auto_20210811_1028.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artify_app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
@@ -19,7 +15,7 @@
       <change beforePath="$PROJECT_DIR$/artify/art_items/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/art_items/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artify/art_items/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/art_items/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/art_items/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/home_page.html" afterDir="false" />
@@ -206,7 +202,7 @@
       <updated>1628665560939</updated>
       <workItem from="1628665564291" duration="565000" />
       <workItem from="1628666221880" duration="130000" />
-      <workItem from="1628666372438" duration="6319000" />
+      <workItem from="1628666372438" duration="6742000" />
     </task>
     <servers />
   </component>
