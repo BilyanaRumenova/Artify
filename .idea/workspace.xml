@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c/storage_v2/_src_/database/artify_db.xIyJIQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c/storage_v2/_src_/database/artify_db.xIyJIQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/other profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/other profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/item_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/item_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/item_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/items_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/items_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/fashion_items_list_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/fashion_items_list_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/paintings_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/paintings_list_items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/photography_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/photography_list_items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/portrait_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/portrait_list_items.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/album_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/album_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom_css.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +194,7 @@
       <workItem from="1628665564291" duration="565000" />
       <workItem from="1628666221880" duration="130000" />
       <workItem from="1628666372438" duration="17195000" />
-      <workItem from="1628746498639" duration="27132000" />
+      <workItem from="1628746498639" duration="27848000" />
     </task>
     <servers />
   </component>
