@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="text-center">
+    <div class="text-center user-profile-wrapper">
         <h1>Hello, {{ request.user }}!</h1>
         <h5>This is your profile</h5>
         {% if profile.profile_image %}
@@ -13,11 +13,11 @@
                  height="140">
         {% endif %}
         <div class="w-50 m-auto">
-            <form action="{% url 'profile details' %}" method="post" enctype="multipart/form-data">
-                <div class="d-flex justify-content-between">
-                    <h5><u>First name:</u> {{ profile.first_name }}</h5>
-                    <h5><u>Last name:</u> {{ profile.last_name }}</h5>
-                    <h5><u>Location:</u> {{ profile.location }}</h5>
+            <form action="{% url 'profile details' %}" method="post" enctype="multipart/form-data" id="user-form">
+                <div class="d-flex justify-content-between" id="user-profile">
+                    <h5><u>First name:</u> <span>{{ profile.first_name }}</span></h5>
+                    <h5><u>Last name:</u> <span>{{ profile.last_name }}</span></h5>
+                    <h5><u>Location:</u> <span>{{ profile.location }}</span></h5>
                 </div>
                 <div>
                     <a href="{% url 'edit profile details' %}" class="btn btn-warning">Update</a>
@@ -30,13 +30,14 @@
     {% if art_items %}
         <h1 class='text-center text-uppercase'>Portfolio</h1>
         <div class="row">
-            <div class="row">
+            <div class="row portfolio-items">
                 {% for item in art_items %}
                     <div class="col-lg-4">
                         <div class="card" style="width: 18rem;">
                             <img src="{{ item.image.url }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <h5 class="card-title">{{ item.type }}</h5>
                                 <p class="card-text">{{ item.description }}</p>
                                 <p class="card-text"><strong>Owner: {{ request.user }}</strong></p>
                                 <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>

@@ -1,18 +1,25 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-    <div class="d-flex">
+    <div class="d-flex item-parent">
         <div class="d-inline p-2 w-50">
             <img src="{{ item.image.url }}" class="w-50 rounded mx-auto d-block">
         </div>
         <div class="d-inline p-2 w-50">
-            <div class="d-flex justify-content-between">
-                <h5><u>Name:</u> {{ item.name }}</h5>
-                <h5><u>Type:</u> {{ item.type }}</h5>
-                <h5><u>Owner:</u> <a href="{% url 'other profile details' item.user.id %}">{{ item.user }}</a></h5>
-
+            <div class="d-flex justify-content-between item-details">
+                <div>
+                    <h5><u>Name:</u> <span>{{ item.name }}</span></h5>
+                </div>
+                <div>
+                    <h5><u>Type:</u> <span>{{ item.type }}</span></h5>
+                </div>
+                <div>
+                    <h5><u>Owner:</u> <a href="{% url 'other profile details' item.user.id %}"><span>{{ item.user }}</span></a></h5>
+                </div>
+                <div>
+                    <h5><u>Description:</u> <span>{{ item.description }}</span></h5>
+                </div>
             </div>
-            <p class="mt-2"></p><h5><u>Description:</u> {{ item.description }}</h5>
             {% if is_owner %}
                 <div>
                     <a href="{% url 'edit item' item.id %}" class="btn btn-warning">Edit</a>
@@ -30,12 +37,12 @@
             {% endif %}
         </div>
     </div>
-    <div class="d-block" style="background-color: #e7e5a7; padding:2%">
+    <div class="d-block comment-section" style="background-color: #e7e5a7; padding:2%">
         {% if comments %}
             {% for comment in comments %}
                 <div class="box">
                     <h5><a href="{% url 'other profile details' comment.user.id %}">{{ comment.user }}</a>:
-                        <em>{{ comment.comment }}</em></h5>
+                       <em>{{ comment.comment }}</em></h5>
                     <hr>
                 </div>
             {% endfor %}

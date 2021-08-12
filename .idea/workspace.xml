@@ -2,40 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artify_app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/accounts/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/art_items/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/art_items/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/art_items/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/art_items/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c/storage_v2/_src_/database/artify_db.xIyJIQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c/storage_v2/_src_/database/artify_db.xIyJIQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/other profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/other profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/art_items/home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/art_items/item-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/art_items/items_albums.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/items_albums.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/art_items/item_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/art_items/item_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/art_items/item_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/item_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/art_items/items_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/art_items/items_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categories/fashion_items_list_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/fashion_items_list_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categories/paintings_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/paintings_list_items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categories/photography_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/photography_list_items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categories/portrait_list_items.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/portrait_list_items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shared/album_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/album_content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shared/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shared/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/Django-3.2.6.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Django-3.2.6.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/asgiref-3.4.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/asgiref-3.4.1.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pip-21.2.3.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pip-21.2.3.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sqlparse-0.4.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/sqlparse-0.4.1.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/django-admin.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/django-admin.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/django-admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/django-admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3.8.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pip3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pip3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sqlformat.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/sqlformat.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/custom_css.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -68,11 +57,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python Web Basics/demo_repos/pythons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../artify_app" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Django Server.artify">
-    <configuration name="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests" type="DjangoTestsConfigurationType" temporary="true">
       <module name="artify" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,14 +75,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.art_items.models.art_item_model_tests.ArtItemModelTest" />
+      <option name="TARGET" value="tests" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemCreationIsValid__shouldCreateArtItem" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.accounts" type="DjangoTestsConfigurationType" temporary="true">
       <module name="artify" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,14 +95,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemCreationIsValid__shouldCreateArtItem" />
+      <option name="TARGET" value="tests.accounts" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed" type="DjangoTestsConfigurationType" temporary="true">
       <module name="artify" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,14 +115,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem" />
+      <option name="TARGET" value="tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed" type="DjangoTestsConfigurationType" temporary="true">
       <module name="artify" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,7 +135,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem" />
+      <option name="TARGET" value="tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: tests.common" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="artify" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="tests.common" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -178,17 +188,19 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.artify" />
-      <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest" />
-      <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem" />
-      <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemCreationIsValid__shouldCreateArtItem" />
-      <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem" />
+      <item itemvalue="Django tests.Test: tests" />
+      <item itemvalue="Django tests.Test: tests.common" />
+      <item itemvalue="Django tests.Test: tests.accounts" />
+      <item itemvalue="Django tests.Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed" />
+      <item itemvalue="Django tests.Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem" />
-        <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemCreationIsValid__shouldCreateArtItem" />
-        <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem" />
-        <item itemvalue="Django tests.Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest" />
+        <item itemvalue="Django tests.Test: tests" />
+        <item itemvalue="Django tests.Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed" />
+        <item itemvalue="Django tests.Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed" />
+        <item itemvalue="Django tests.Test: tests.accounts" />
+        <item itemvalue="Django tests.Test: tests.common" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +214,8 @@
       <updated>1628665560939</updated>
       <workItem from="1628665564291" duration="565000" />
       <workItem from="1628666221880" duration="130000" />
-      <workItem from="1628666372438" duration="6742000" />
+      <workItem from="1628666372438" duration="17195000" />
+      <workItem from="1628746498639" duration="27132000" />
     </task>
     <servers />
   </component>
@@ -222,9 +235,53 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithInvalidType__shouldNotCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithInvalidType__shouldNotCreateItem Coverage Results" MODIFIED="1628753008086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest_test_PostCommentWhenSignedInWithInvalidData__shouldNotPostComment.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest.test_PostCommentWhenSignedInWithInvalidData__shouldNotPostComment Coverage Results" MODIFIED="1628695035927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithInvalidDescription__shouldNotCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithInvalidDescription__shouldNotCreateItem Coverage Results" MODIFIED="1628753182207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_models_art_item_model_tests_ArtItemModelTest.coverage" NAME="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest Coverage Results" MODIFIED="1628666274346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_models_art_item_model_tests_ArtItemModelTest_test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem.coverage" NAME="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem Coverage Results" MODIFIED="1628666303833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_items_photography_list_view_tests_ArtItemPhotographyListViewTest_test_getPhotographyItemsListWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_items_photography_list_view_tests.ArtItemPhotographyListViewTest.test_getPhotographyItemsListWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628697557560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_new_item_form_is_valid.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_new_item_form_is_valid Coverage Results" MODIFIED="1628750312038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest_test_PostCommentWhenSignedInWithTooShortComment__shouldNotPostComment.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest.test_PostCommentWhenSignedInWithTooShortComment__shouldNotPostComment Coverage Results" MODIFIED="1628696792016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_forms_art_item_comment_form_tests_ArtItemCommentTestForm_test_commentFormWhenCommentValid__shouldPostComment.coverage" NAME="Test: tests.art_items.forms.art_item_comment_form_tests.ArtItemCommentTestForm.test_commentFormWhenCommentValid__shouldPostComment Coverage Results" MODIFIED="1628749262395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_PostRequestToDeleteArtItem__shouldDeleteArtItem.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_PostRequestToDeleteArtItem__shouldDeleteArtItem Coverage Results" MODIFIED="1628755506393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_items_list_view_test_ArtItemListViewTest_test_getArtItemsListWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_items_list_view_test.ArtItemListViewTest.test_getArtItemsListWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628697467427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_items_portrait_list_view_tests_ArtItemPortraitListViewTest_test_getPortraitItemsListWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_items_portrait_list_view_tests.ArtItemPortraitListViewTest.test_getPortraitItemsListWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628697589628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts_views_profile_follow_tests_FollowProfileViewTests.coverage" NAME="Test: tests.accounts.views.profile_follow_tests.FollowProfileViewTests Coverage Results" MODIFIED="1628694260937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_DeleteArtItemWhenArtItemDoesNotExist__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_DeleteArtItemWhenArtItemDoesNotExist__shouldRaiseError Coverage Results" MODIFIED="1628756432731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithTooShortName__shouldNotCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithTooShortName__shouldNotCreateItem Coverage Results" MODIFIED="1628752610063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_deleteArtItemWhenNotOwner__shouldRaiseError2.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_deleteArtItemWhenNotOwner__shouldRaiseError2 Coverage Results" MODIFIED="1628757963163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest_test_PostCommentWhenSignedInWithValidData__shouldPostComment.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest.test_PostCommentWhenSignedInWithValidData__shouldPostComment Coverage Results" MODIFIED="1628697090730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_home_page_tests_ArtItemHomeViewTest_test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed.coverage" NAME="Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed Coverage Results" MODIFIED="1628784179697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_items_paintings_list_view_ArtItemPaintingsListViewTest_test_getPaintingsItemsListWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_items_paintings_list_view.ArtItemPaintingsListViewTest.test_getPaintingsItemsListWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628697522184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest Coverage Results" MODIFIED="1628750552846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_models_art_item_model_tests_ArtItemModelTest_test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem.coverage" NAME="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem Coverage Results" MODIFIED="1628667074133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_like_art_item_view_test_LikeArtItemViewTests_test_likeArtItemWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.like_art_item_view_test.LikeArtItemViewTests.test_likeArtItemWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628698580622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_DeleteArtItemWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_DeleteArtItemWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628756177489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts.coverage" NAME="Test: tests.accounts Coverage Results" MODIFIED="1628781652161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest_test_PostCommentWhenSignedInWithTooLongComment__shouldNotPostComment.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest.test_PostCommentWhenSignedInWithTooLongComment__shouldNotPostComment Coverage Results" MODIFIED="1628695800805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithInvalidData__shouldNotCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithInvalidData__shouldNotCreateItem Coverage Results" MODIFIED="1628752491437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_forms_art_item_comment_form_tests_ArtItemCommentTestForm_test_commentFormCommentFormTooShort__shouldNotPostComment.coverage" NAME="Test: tests.art_items.forms.art_item_comment_form_tests.ArtItemCommentTestForm.test_commentFormCommentFormTooShort__shouldNotPostComment Coverage Results" MODIFIED="1628749275580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_common.coverage" NAME="Test: tests.common Coverage Results" MODIFIED="1628781612315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest_test_PostCommentWhenSignedInWithInvalidData2__shouldNotPostComment.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest.test_PostCommentWhenSignedInWithInvalidData2__shouldNotPostComment Coverage Results" MODIFIED="1628695403711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts_views_profile_details_tests_ProfileDetailsTest_test_getDetails__whenLoggedInUserWithArtItems_shouldGetDetailsWithArtItems.coverage" NAME="Test: tests.accounts.views.profile_details_tests.ProfileDetailsTest.test_getDetails__whenLoggedInUserWithArtItems_shouldGetDetailsWithArtItems Coverage Results" MODIFIED="1628749995312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_CreateNewArtItemTest_test_getArtItemWhenLoggedIn__shouldDeleteArtItem.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.CreateNewArtItemTest.test_getArtItemWhenLoggedIn__shouldDeleteArtItem Coverage Results" MODIFIED="1628755185156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_details_tests_ArtItemDetailsTest_test_getArtItemDetails_whenArtItemDoesNotExistsAndIsOwner_shouldReturnDetailsForOwner.coverage" NAME="Test: tests.art_items.views.art_item_details_tests.ArtItemDetailsTest.test_getArtItemDetails_whenArtItemDoesNotExistsAndIsOwner_shouldReturnDetailsForOwner Coverage Results" MODIFIED="1628699173503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithTooLongName__shouldNotCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithTooLongName__shouldNotCreateItem Coverage Results" MODIFIED="1628752854828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenSignedInWithValidData__shouldCreateItem.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenSignedInWithValidData__shouldCreateItem Coverage Results" MODIFIED="1628752953744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_models_art_item_model_tests_ArtItemModelTest_test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem.coverage" NAME="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemNameIsTooShortCreationIsInvalid__shouldNotCreateArtItem Coverage Results" MODIFIED="1628666303833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_details_tests_ArtItemDetailsTest.coverage" NAME="Test: tests.art_items.views.art_item_details_tests.ArtItemDetailsTest Coverage Results" MODIFIED="1628697325555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_models_art_item_model_tests_ArtItemModelTest_test_artItemCreationIsValid__shouldCreateArtItem.coverage" NAME="Test: tests.art_items.models.art_item_model_tests.ArtItemModelTest.test_artItemCreationIsValid__shouldCreateArtItem Coverage Results" MODIFIED="1628667055295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_forms_art_item_comment_form_tests_ArtItemCommentTestForm_test_commentFormWhenCommentTooLong__shouldNotPostComment.coverage" NAME="Test: tests.art_items.forms.art_item_comment_form_tests.ArtItemCommentTestForm.test_commentFormWhenCommentTooLong__shouldNotPostComment Coverage Results" MODIFIED="1628749291231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_DeleteArtItemWhenMotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_DeleteArtItemWhenMotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628755957436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests.coverage" NAME="Test: tests Coverage Results" MODIFIED="1628784205975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_comment_view_tests_CommentViewTest.coverage" NAME="Test: tests.art_items.views.art_item_comment_view_tests.CommentViewTest Coverage Results" MODIFIED="1628694336263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_items_list_view_test_ArtItemListViewTest_test_getArtItemsListWhenEmpty__shouldReturnNone.coverage" NAME="Test: tests.art_items.views.art_items_list_view_test.ArtItemListViewTest.test_getArtItemsListWhenEmpty__shouldReturnNone Coverage Results" MODIFIED="1628698898902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts_views_profile_details_tests_ProfileDetailsTest.coverage" NAME="Test: tests.accounts.views.profile_details_tests.ProfileDetailsTest Coverage Results" MODIFIED="1628694289839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_new_item_form_is_valid2.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_new_item_form_is_valid2 Coverage Results" MODIFIED="1628751105913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_delete_view_test_DeleteArtItemTest_test_deleteArtItemWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_item_delete_view_test.DeleteArtItemTest.test_deleteArtItemWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628757141924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_art_item_create_test_CreateNewArtItemTest_test_createItemWhenNotSignedIn__shouldRaiseError.coverage" NAME="Test: tests.art_items.views.art_item_create_test.CreateNewArtItemTest.test_createItemWhenNotSignedIn__shouldRaiseError Coverage Results" MODIFIED="1628756465481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts_views_profile_other_details_tests_OtherProfileDetailsTest.coverage" NAME="Test: tests.accounts.views.profile_other_details_tests.OtherProfileDetailsTest Coverage Results" MODIFIED="1628694177272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_accounts_views.coverage" NAME="Test: tests.accounts.views Coverage Results" MODIFIED="1628758616701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/artify$Test__tests_art_items_views_home_page_tests_ArtItemHomeViewTest_test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed.coverage" NAME="Test: tests.art_items.views.home_page_tests.ArtItemHomeViewTest.test_getHomePageWithArtItemsList_whenFollowedProfileHasUploadedImage__shouldReturnFeed Coverage Results" MODIFIED="1628783230962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

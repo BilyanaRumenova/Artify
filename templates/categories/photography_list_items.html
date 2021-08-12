@@ -1,8 +1,12 @@
 {% extends 'shared/base.html' %}
+{% load profile_complete_notification %}
+
 
 {% block content %}
+    {% profile_complete_notification %}
+
     <h1 class='text-center text-uppercase'>All photography photos</h1>
-    <div class="row">
+    <div class="row portfolio-items">
         {% for item in photography_items %}
             {% include 'shared/album_content.html' %}
         {% endfor %}

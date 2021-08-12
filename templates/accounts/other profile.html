@@ -1,63 +1,65 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="d-flex"></div>
+    <div class="d-flex customer-details">
 
-    {% if is_owner %}
-        <a href="{% url 'profile details' %}"></a>
-
-    {% else %}
-        {% if profile.profile_image %}
-            <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
-                 height="140">
-        {% else %}
-            <img class="rounded-circle mb-3" src="{% static 'images/index.png' %}" alt="" width="140"
-                 height="140">
-        {% endif %}
-        <h5><u>User:</u> {{ profile.user }}</h5>
-        <h5><u>First Name:</u> {{ profile.first_name }}</h5>
-        <h5><u>Last Name:</u> {{ profile.last_name }}</h5>
-        <h5><u>Location:</u> {{ profile.location }}</h5>
-        <p class="mt-2">Followers: {{ profile.follow_set.count }}</p>
-    {% endif %}
-
-    {% if is_owner %}
-        <div>
+        {% if is_owner %}
             <a href="{% url 'profile details' %}"></a>
-        </div>
-    {% else %}
-        <a href="{% url 'follow profile' profile.user_id %}"></a>
-        {% if is_followed %}
-            <a href="{% url 'follow profile' profile.user_id %}" class="btn btn-warning">Unfollow</a>
-        {% else %}
-            <a href="{% url 'follow profile' profile.user_id %}" class="btn btn-warning">Follow</a>
-        {% endif %}
-    {% endif %}
 
-    <h1 class='text-center text-uppercase'>Portfolio</h1>
-    {% if art_items %}
-        <div class="row">
+        {% else %}
+            {% if profile.profile_image %}
+                <img class="rounded-circle mb-3" src="{{ profile.profile_image.url }}" alt="" width="140"
+                     height="140">
+            {% else %}
+                <img class="rounded-circle mb-3" src="{% static 'images/index.png' %}" alt="" width="140"
+                     height="140">
+            {% endif %}
+            <h5><u>User:</u> <span>{{ profile.user }}</span></h5>
+            <h5><u>First Name:</u> <span>{{ profile.first_name }}</span></h5>
+            <h5><u>Last Name:</u> <span>{{ profile.last_name }}</span></h5>
+            <h5><u>Location:</u> <span>{{ profile.location }}</span></h5>
+            <p class="mt-2">Followers: {{ profile.follow_set.count }}</p>
+        {% endif %}
+
+        {% if is_owner %}
+            <div>
+                <a href="{% url 'profile details' %}"></a>
+            </div>
+        {% else %}
+            <a href="{% url 'follow profile' profile.user_id %}"></a>
+            {% if is_followed %}
+                <a href="{% url 'follow profile' profile.user_id %}" class="btn btn-warning">Unfollow</a>
+            {% else %}
+                <a href="{% url 'follow profile' profile.user_id %}" class="btn btn-warning">Follow</a>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="portfolio-items">
+        <h1 class='text-center text-uppercase'>Portfolio</h1>
+        {% if art_items %}
             <div class="row">
-                {% for item in art_items %}
-                    <div class="col-lg-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="{{ item.image.url }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ item.type }} {{ item.name }}</h5>
-                                <p class="card-text">{{ item.description }}</p>
-                                <p class="card-text"><strong>Owner: {{ item.user }}</strong></p>
-                                <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+                <div class="row">
+                    {% for item in art_items %}
+                        <div class="col-lg-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{ item.image.url }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ item.name }}</h5>
+                                    <h5 class="card-title">{{ item.type }}</h5>
+                                    <p class="card-text">{{ item.description }}</p>
+                                    <p class="card-text"><strong>Owner: {{ item.user }}</strong></p>
+                                    <a href="{% url 'item details' item.id %}" class="btn btn-primary">See details</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    {% else %}
-        <div class="text-center">
-            <h2>This profile has no art photos</h2>
+        {% else %}
+            <div class="text-center">
+                <h2>This profile has no art photos</h2>
 
-        </div>
-    {% endif %}
-
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'artify.common',
     'artify.art_items',
 
+    # 'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,5 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTH_USER_MODEL = 'accounts.ArtifyUser'
+
+# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

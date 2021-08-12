@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="text-center">
+    <div class="text-center user-profile-wrapper">
         <h1>Hello, {{ request.user }}!</h1>
         <h5>This is your profile</h5>
         {% if profile.profile_image %}
@@ -24,7 +24,7 @@
     {% if art_items %}
         <h1 class='text-center text-uppercase'>Portfolio</h1>
         <div class="row">
-            <div class="row">
+            <div class="row portfolio-items">
                 {% for item in art_items %}
                     <div class="col-lg-4">
                         <div class="card" style="width: 18rem;">
@@ -46,6 +46,4 @@
             <a href="{% url 'create item' %}" class="btn btn-warning">Add Art Item Photo</a>
         </div>
     {% endif %}
-
-    {% include 'art_items/items_albums.html' %}
 {% endblock %}
