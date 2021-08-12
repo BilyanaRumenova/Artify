@@ -54,6 +54,5 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
 
     def test_getOtherProfileDetails__whenOtherUserDoesNotExist__shouldRaiseError(self):
         self.client.force_login(self.user)
-
         self.assertFalse(Profile.objects.filter(
             user_id=5).exists())
