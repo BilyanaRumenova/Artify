@@ -4,18 +4,14 @@ import cloudinary as cloudinary
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure-%wqt82hpwk92v-p7*^#3^6k(p9w-j@iy0!m8mvsio_9wuiqy)('
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,7 +25,7 @@ INSTALLED_APPS = [
     'artify.common',
     'artify.art_items',
 
-    # 'django_nose',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -108,8 +104,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -119,13 +113,11 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media_files'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    # Other context processors included here
     'responsive.context_processors.device_info',
 )
 
@@ -136,7 +128,6 @@ DEFAULT_BREAKPOINTS = {
 }
 
 MIDDLEWARE_CLASSES = (
-    # Other middleware classes go here
     'responsive.middleware.DeviceInfoMiddleware',
 )
 
@@ -144,8 +135,10 @@ AUTH_USER_MODEL = 'accounts.ArtifyUser'
 
 
 cloudinary.config(
-  cloud_name = "dqn3ajxy7",
-  api_key = "452914795151532",
-  api_secret = "oECIpYX1cwdUrDetKc2-8P-i0js",
-  secure = True
+  cloud_name="dqn3ajxy7",
+  api_key="452914795151532",
+  api_secret="oECIpYX1cwdUrDetKc2-8P-i0js",
+  secure=True
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

@@ -37,7 +37,7 @@ class ArtItemPhotographyListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTest
         self.assertIn(item_2, response.context['photography_items'])
         self.assertEqual(2, len(response.context['photography_items']))
 
-    def test_createAnotherTypeArtItemsListWhenSignedIn__shouldReturnEmptyPhotographyList(self):
+    def test_getPhotographyArtItemsListWhenEmpty__shouldReturnEmptyPhotographyList(self):
         self.client.force_login(self.user)
 
         item_user_1 = self.create_user(email='item1@user.com', password='1234test1')
@@ -61,5 +61,11 @@ class ArtItemPhotographyListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTest
 
         self.assertNotIn(item_1, response.context['photography_items'])
         self.assertNotIn(item_2, response.context['photography_items'])
+        self.assertEqual(0, len(response.context['photography_items']))
+
+    def test_getPhotographyArtItemsListWhenNoPhotosAtAllCreated__shouldReturnEmptyPhotographyList(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('photography items'))
+
         self.assertEqual(0, len(response.context['photography_items']))
 

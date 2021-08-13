@@ -120,10 +120,6 @@ class FollowProfileView(LoginRequiredMixin, View):
         return redirect('other profile details', profile_to_follow.user_id)
 
 
-class OtherProfileDetailsView(View):
-    pass
-
-
 @login_required
 def other_profile_details(request, pk):
     other_profile = Profile.objects.get(pk=pk)

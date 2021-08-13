@@ -807,7 +807,7 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>58193</IntrospectionStateNumber>
+      <IntrospectionStateNumber>60344</IntrospectionStateNumber>
       <Relations>sequence|table|276060|276062|1
 sequence|table|276071|276073|1
 sequence|table|276081|276083|1
@@ -944,7 +944,7 @@ sequence|table|49595|49597|1
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>58194</IntrospectionStateNumber>
+      <IntrospectionStateNumber>60345</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="24" parent="2" name="plpgsql">
@@ -1277,7 +1277,7 @@ sequence|table|49595|49597|1
     <table id="70" parent="23" name="accounts_profile">
       <ObjectId>276159</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>48563</StateNumber>
+      <StateNumber>59273</StateNumber>
     </table>
     <table id="71" parent="23" name="art_items_artitem">
       <ObjectId>276244</ObjectId>
@@ -1762,7 +1762,7 @@ permission_id</ColNames>
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>48422</StateNumber>
+      <StateNumber>59273</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="142" parent="70" name="location">
@@ -1783,12 +1783,12 @@ permission_id</ColNames>
       <Position>6</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>48563</StateNumber>
+      <StateNumber>59273</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <index id="145" parent="70" name="accounts_profile_pkey">
       <ObjectId>276162</ObjectId>
-      <StateNumber>48422</StateNumber>
+      <StateNumber>59273</StateNumber>
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1846,9 +1846,9 @@ permission_id</ColNames>
     </column>
     <column id="152" parent="71" name="image">
       <Position>5</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>48429</StateNumber>
+      <StateNumber>59228</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="153" parent="71" name="user_id">

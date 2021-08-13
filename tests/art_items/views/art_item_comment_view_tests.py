@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.test import Client
+from django.urls import reverse
 
 from artify.art_items.models import ArtItem, Comment
 from tests.base.mixins import ArtItemTestUtils, UserTestUtils
@@ -75,3 +76,9 @@ class CommentViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
                 comment.save()
         self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 0)
         self.assertFalse(Comment.objects.filter(comment=comment.comment).exists())
+
+
+
+
+
+

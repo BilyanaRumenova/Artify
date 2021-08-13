@@ -4,8 +4,6 @@ from django.db import models
 
 from artify.accounts.managers import ArtifyUserManager
 
-from cloudinary import models as cloudinary_models
-
 
 class ArtifyUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
@@ -31,8 +29,8 @@ class Profile(models.Model):
         max_length=30,
         blank=True,
     )
-    profile_image = cloudinary_models.CloudinaryField(
-        resource_type='image',
+    profile_image = models.ImageField(
+        upload_to='profiles',
         blank=True,
     )
     location = models.CharField(
@@ -47,9 +45,6 @@ class Profile(models.Model):
     is_complete = models.BooleanField(
         default=False,
     )
-
-    def __str__(self):
-        return f'{self.user}'
 
 
 from .signals import *

@@ -63,3 +63,8 @@ class ArtItemPortraitListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCas
         self.assertNotIn(item_2, response.context['fashion_items'])
         self.assertEqual(0, len(response.context['fashion_items']))
 
+    def test_getFashionArtItemsListWhenNoPhotosAtAllCreated__shouldReturnEmptyFashionList(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('fashion items'))
+
+        self.assertEqual(0, len(response.context['fashion_items']))

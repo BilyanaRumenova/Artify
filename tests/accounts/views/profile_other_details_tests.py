@@ -1,9 +1,11 @@
+import factory
 from django.contrib.auth import get_user_model
-from django.test import TestCase, Client
+from django.test import Client
 from django.urls import reverse
 
+from artify.accounts import signals
 from artify.accounts.models import Profile
-from artify.art_items.models import ArtItem
+from artify.art_items.models import ArtItem, Follow
 from tests.base.mixins import ArtItemTestUtils, UserTestUtils
 from tests.base.tests import ArtifyTestCase
 
@@ -34,7 +36,7 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.client.force_login(self.user)
 
         other_user = self.create_user(email='other@user.bg', password='1234test')
-        art_item = ArtItem.objects.create(
+        art_item = self.create_item(
             type=ArtItem.TYPE_CHOICE_FASHION,
             name='test',
             description='test item description',
@@ -52,7 +54,47 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertListEqual([art_item], other_profile_art_items)
         self.assertFalse(other_profile_is_owner)
 
+    @factory.django.mute_signals(signals.post_save)
+    def test_getOtherProfileDetails__whenOtherProfileHasFollowers__shouldGetDetailsWithFollowers(self):
+        self.client.force_login(self.user)
+
+        other_user = self.create_user(email='other@user.bg', password='1234test')
+        other_profile = self.create_profile(user=other_user)
+
+        Follow.objects.create(
+            profile_to_follow=other_profile,
+            follower=self.user
+        )
+
+        response = self.client.get(reverse('other profile details', kwargs={'pk': other_user.id}))
+
+        other_profile_is_followed = response.context['is_followed']
+        other_profile_is_owner = response.context['is_owner']
+
+        self.assertEqual(200, response.status_code)
+        self.assertTrue(other_profile_is_followed)
+        self.assertFalse(other_profile_is_owner)
+
+    @factory.django.mute_signals(signals.post_save)
+    def test_getOtherProfileDetails__whenOtherProfileHasNoFollowers__shouldGetDetailsWithoutFollowers(self):
+        self.client.force_login(self.user)
+
+        other_user = self.create_user(email='other@user.bg', password='1234test')
+        self.create_profile(user=other_user)
+
+        response = self.client.get(reverse('other profile details', kwargs={'pk': other_user.id}))
+
+        other_profile_is_followed = response.context['is_followed']
+
+        self.assertEqual(200, response.status_code)
+        self.assertFalse(other_profile_is_followed)
+
     def test_getOtherProfileDetails__whenOtherUserDoesNotExist__shouldRaiseError(self):
         self.client.force_login(self.user)
         self.assertFalse(Profile.objects.filter(
             user_id=5).exists())
+
+
+
+
+

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from artify.accounts.views import SignUpView, SignInView, SignOutView, ProfileDetailsView, OtherProfileDetailsView, \
+from artify.accounts.views import SignUpView, SignInView, SignOutView, ProfileDetailsView, \
     FollowProfileView, other_profile_details, EditProfileDetailsView
 
 urlpatterns = (

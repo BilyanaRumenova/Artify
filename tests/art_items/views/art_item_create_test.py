@@ -101,6 +101,22 @@ class CreateNewArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(302, response.status_code)
 
 
+    def test_createItemWhenSignedInWithInvalidImagePath__shouldNotCreateItem(self):
+        self.client.login()
+
+        with self.assertRaises(ValidationError):
+            art_item = ArtItem(
+                type='other',
+                name='test',
+                description='description ',
+                image='abvg',
+                user=self.user,
+            )
+            art_item.full_clean()
+        response = self.client.get(reverse('create item'))
+        self.assertEqual(302, response.status_code)
+
+
 
 
 
