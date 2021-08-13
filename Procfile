@@ -1,1 +1,1 @@
-web: gunicorn <name_of_project_folder>.wsgi
+web: gunicorn artify.wsgi
