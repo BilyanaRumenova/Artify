@@ -5,7 +5,6 @@ import cloudinary as cloudinary
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 SECRET_KEY = 'django-insecure-%wqt82hpwk92v-p7*^#3^6k(p9w-j@iy0!m8mvsio_9wuiqy)('
 
 DEBUG = True
