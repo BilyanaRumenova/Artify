@@ -64,16 +64,25 @@ WSGI_APPLICATION = 'artify.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'artify_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
+        'NAME': 'd2n0vvajkmvi35',
+        'USER': 'sriedlfrmsfbrx',
+        'PASSWORD': '6a02b6c84d06c308667e2bd895f36ddab8499c4f3a93624abf901ac345f8f994',
+        'HOST': 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'artify_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'mypassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     # {
