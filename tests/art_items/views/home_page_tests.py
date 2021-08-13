@@ -59,7 +59,6 @@ class ArtItemHomeViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
     @factory.django.mute_signals(signals.post_save)
     def test_getHomePageWithArtItemsList_whenNotFollowedAnyProfile__shouldReturnEmptyFeed(self):
         self.client.force_login(self.user)
-
         response = self.client.get(reverse('home'))
 
         self.assertEqual(0, len(response.context['feed']))

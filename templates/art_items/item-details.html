@@ -28,9 +28,9 @@
             {% else %}
                 <a href="{% url 'like item' item.id %}">
                     {% if is_liked %}
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
                     {% else %}
-                        <i class="far fa-heart" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
                     {% endif %}
                 </a>
                 <p class="mt-2">Likes: {{ item.like_set.count }}</p>

@@ -4,6 +4,9 @@ from django.db import models
 
 from artify.accounts.models import ArtifyUser, Profile
 
+from cloudinary import models as cloudinary_models
+
+
 UserModel = get_user_model()
 
 
@@ -30,8 +33,8 @@ class ArtItem(models.Model):
     description = models.TextField(
         max_length=100,
     )
-    image = models.ImageField(
-        upload_to='arts',
+    image =cloudinary_models.CloudinaryField(
+        resource_type='image',
     )
     user = models.ForeignKey(
         UserModel,

@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import cloudinary as cloudinary
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -140,4 +142,10 @@ MIDDLEWARE_CLASSES = (
 
 AUTH_USER_MODEL = 'accounts.ArtifyUser'
 
-# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+cloudinary.config(
+  cloud_name = "dqn3ajxy7",
+  api_key = "452914795151532",
+  api_secret = "oECIpYX1cwdUrDetKc2-8P-i0js",
+  secure = True
+)
