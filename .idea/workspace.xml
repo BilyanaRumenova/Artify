@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/artify/accounts/migrations/0006_alter_profile_profile_image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Django tests.Test: tests">
+  <component name="RunManager" selected="Django Server.artify">
     <configuration name="Test: tests" type="DjangoTestsConfigurationType" temporary="true">
       <module name="artify" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,7 +201,7 @@
       <workItem from="1628666221880" duration="130000" />
       <workItem from="1628666372438" duration="17195000" />
       <workItem from="1628746498639" duration="41073000" />
-      <workItem from="1628852512595" duration="27293000" />
+      <workItem from="1628852512595" duration="28336000" />
     </task>
     <servers />
   </component>
