@@ -30,10 +30,11 @@ class CommentViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
                           item=art_item,
                           user=self.user
                           )
-        if comment.full_clean():
-            comment.save()
-            self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 1)
-            self.assertTrue(Comment.objects.filter(comment='test').exists())
+        comment.full_clean()
+        comment.save()
+        self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 1)
+        self.assertTrue(Comment.objects.filter(comment='test').exists())
+
 
     def test_PostCommentWhenSignedInWithTooLongComment__shouldNotPostComment(self):
         self.client.force_login(self.user)
@@ -49,12 +50,15 @@ class CommentViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
                           item=art_item,
                           user=self.user
                           )
-
-        with self.assertRaises(ValidationError):
-            if comment.full_clean():
-                comment.save()
+        try:
+            comment.full_clean()
+            comment.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
         self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 0)
         self.assertFalse(Comment.objects.filter(comment=comment.comment).exists())
+
 
     def test_PostCommentWhenSignedInWithTooShortComment__shouldNotPostComment(self):
         self.client.force_login(self.user)
@@ -70,10 +74,12 @@ class CommentViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
                           item=art_item,
                           user=self.user
                           )
-
-        with self.assertRaises(ValidationError):
-            if comment.full_clean():
-                comment.save()
+        try:
+            comment.full_clean()
+            comment.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
         self.assertEqual(Comment.objects.filter(comment=comment.comment).count(), 0)
         self.assertFalse(Comment.objects.filter(comment=comment.comment).exists())
 

@@ -37,6 +37,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 'responsive.middleware.DeviceInfoMiddleware',
 ]
 
 ROOT_URLCONF = 'artify.urls'
@@ -60,31 +62,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'artify.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd2n0vvajkmvi35',
+#         'USER': 'sriedlfrmsfbrx',
+#         'PASSWORD': '6a02b6c84d06c308667e2bd895f36ddab8499c4f3a93624abf901ac345f8f994',
+#         'HOST': 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2n0vvajkmvi35',
-        'USER': 'sriedlfrmsfbrx',
-        'PASSWORD': '6a02b6c84d06c308667e2bd895f36ddab8499c4f3a93624abf901ac345f8f994',
-        'HOST': 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
+        'NAME': 'artify_db',
+        'USER': 'postgres',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'artify_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'mypassword',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
 
 AUTH_PASSWORD_VALIDATORS = [
     # {

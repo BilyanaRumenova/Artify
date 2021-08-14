@@ -37,6 +37,8 @@ class ArtItemHomeViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(1, len(response.context['feed']))
         self.assertIn(item_from_feed, response.context['feed'])
+        self.assertTemplateUsed(response, 'art_items/home_page.html')
+
 
     @factory.django.mute_signals(signals.post_save)
     def test_getHomePageWithArtItemsList_whenFollowedProfileHasNotUploadedImage__shouldReturnEmptyFeed(self):
@@ -54,6 +56,7 @@ class ArtItemHomeViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         )
 
         self.assertEqual(0, len(response.context['feed']))
+        self.assertTemplateUsed(response, 'art_items/home_page.html')
 
 
     @factory.django.mute_signals(signals.post_save)
@@ -62,6 +65,8 @@ class ArtItemHomeViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         response = self.client.get(reverse('home'))
 
         self.assertEqual(0, len(response.context['feed']))
+        self.assertTemplateUsed(response, 'art_items/home_page.html')
+
 
     @factory.django.mute_signals(signals.post_save)
     def test_getHomePageWithArtItemsList_whenFollowedMoreProfiles__shouldReturnFeed(self):
@@ -117,3 +122,4 @@ class ArtItemHomeViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertIn(item_1_from_followed_user_1, response.context['feed'])
         self.assertIn(item_2_from_followed_user_1, response.context['feed'])
         self.assertIn(item_from_followed_user_2, response.context['feed'])
+        self.assertTemplateUsed(response, 'art_items/home_page.html')

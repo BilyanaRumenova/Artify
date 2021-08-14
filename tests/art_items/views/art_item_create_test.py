@@ -100,7 +100,6 @@ class CreateNewArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         response = self.client.get(reverse('create item'))
         self.assertEqual(302, response.status_code)
 
-
     def test_createItemWhenSignedInWithInvalidImagePath__shouldNotCreateItem(self):
         self.client.login()
 

@@ -25,6 +25,7 @@ class ProfileDetailsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertListEqual([], art_items)
         self.assertEqual(self.user.id, profile.user_id)
+        self.assertTemplateUsed(response, 'accounts/user_profile.html')
 
     def test_getDetails__whenLoggedInUserWithArtItems_shouldGetDetailsWithArtItems(self):
         art_item = ArtItem.objects.create(
@@ -43,6 +44,8 @@ class ProfileDetailsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertListEqual([art_item], list(response.context['art_items']))
         self.assertEqual(self.user.id, profile.user_id)
+        self.assertTemplateUsed(response, 'accounts/user_profile.html')
+
 
 
 

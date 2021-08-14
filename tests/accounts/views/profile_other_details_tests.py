@@ -30,6 +30,7 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(200, response.status_code)
         self.assertNotEqual(self.user.id, other_profile.user_id)
         self.assertListEqual([], other_profile_art_items)
+        self.assertTemplateUsed(response, 'accounts/other profile.html')
 
 
     def test_getOtherProfileDetails__whenOtherUserHasArtItems__shouldGetDetailsWithArtItems(self):
@@ -53,6 +54,8 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertNotEqual(self.user.id, other_profile.user_id)
         self.assertListEqual([art_item], other_profile_art_items)
         self.assertFalse(other_profile_is_owner)
+        self.assertTemplateUsed(response, 'accounts/other profile.html')
+
 
     @factory.django.mute_signals(signals.post_save)
     def test_getOtherProfileDetails__whenOtherProfileHasFollowers__shouldGetDetailsWithFollowers(self):
@@ -74,6 +77,8 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(200, response.status_code)
         self.assertTrue(other_profile_is_followed)
         self.assertFalse(other_profile_is_owner)
+        self.assertTemplateUsed(response, 'accounts/other profile.html')
+
 
     @factory.django.mute_signals(signals.post_save)
     def test_getOtherProfileDetails__whenOtherProfileHasNoFollowers__shouldGetDetailsWithoutFollowers(self):
@@ -88,12 +93,14 @@ class OtherProfileDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
 
         self.assertEqual(200, response.status_code)
         self.assertFalse(other_profile_is_followed)
+        self.assertTemplateUsed(response, 'accounts/other profile.html')
 
-    def test_getOtherProfileDetails__whenOtherUserDoesNotExist__shouldRaiseError(self):
-        self.client.force_login(self.user)
-        self.assertFalse(Profile.objects.filter(
-            user_id=5).exists())
-
+    #
+    # def test_getOtherProfileDetails__whenOtherUserDoesNotExist__shouldRaiseError(self):
+    #     self.client.force_login(self.user)
+    #     self.assertFalse(Profile.objects.filter(
+    #         user_id=5).exists())
+    #
 
 
 

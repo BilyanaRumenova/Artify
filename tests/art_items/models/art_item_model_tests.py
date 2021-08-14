@@ -23,6 +23,48 @@ class ArtItemModelTest(TestCase):
         item = self.create_art_item_with_proper_attrs()
         self.assertTrue(isinstance(item, ArtItem))
 
+    def test_artItemCreate_whenValidData__shouldCreateIt(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='test',
+                       description='description test',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
+        item.full_clean()
+        item.save()
+
+        self.assertIsNotNone(item)
+
+    def test_artItemCreate_whenTooLongName__shouldRaise(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='test 11111111111111111111111111111111111111',
+                       description='description test',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
+
+        try:
+            item.full_clean()
+            item.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
+
+    def test_artItemCreate_whenTooShortName__shouldRaise(self):
+        item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
+                       name='t',
+                       description='description test',
+                       image='path/to/image.png',
+                       user=self.user
+                       )
+
+        try:
+            item.full_clean()
+            item.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
+
     def test_artItemNameIsTooLongCreationIsInvalid__shouldNotCreateArtItem(self):
         item = ArtItem(type=ArtItem.TYPE_CHOICE_PORTRAIT,
                        name='testtesttesttesttesttesttesttesttesttesttesttesttest',

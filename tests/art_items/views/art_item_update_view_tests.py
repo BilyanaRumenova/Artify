@@ -52,7 +52,9 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(existing_art_item.name, 'new name')
         self.assertEqual(self.art_item.description, 'new item description')
 
-        self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+        response = self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+        self.assertTemplateUsed(response, 'art_items/item-details.html')
+
 
     def test_getUpdateItemWithValidDataWhenSignedIn__shouldSaveForm(self):
         self.client.force_login(self.user)
@@ -71,7 +73,10 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertEqual(self.art_item.name, 'new name')
         self.assertEqual(self.art_item.type, 'fashion')
         self.assertEqual(self.art_item.description, 'item description')
-        self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+
+        response = self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+        self.assertTemplateUsed(response, 'art_items/item-details.html')
+
 
     def test_getUpdateItemWithTooShortNameWhenSignedIn__shouldRaiseError(self):
         self.client.force_login(self.user)
@@ -95,7 +100,7 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.client.force_login(self.user)
         existing_art_item = self.art_item
 
-        self.client.post(reverse('edit item', kwargs={'pk': existing_art_item.id}), data={
+        response = self.client.post(reverse('edit item', kwargs={'pk': existing_art_item.id}), data={
             'type': 'fashion',
             'name': '1',
             'description': 'new item description',
@@ -104,6 +109,8 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         existing_art_item.refresh_from_db()
         self.assertEqual(existing_art_item.name, 'test')
         self.assertEqual(self.art_item.description, 'test item description')
+        self.assertTemplateUsed(response, 'art_items/item_edit.html')
+
 
     def test_getUpdateItemWithTooLongNameWhenSignedIn__shouldRaiseError(self):
         self.client.force_login(self.user)
@@ -134,7 +141,8 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         existing_art_item.refresh_from_db()
         self.assertEqual(existing_art_item.name, 'test')
         self.assertEqual(self.art_item.description, 'test item description')
-        self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+        response = self.client.get(reverse('item details', kwargs={'pk': existing_art_item.id}))
+        self.assertTemplateUsed(response, 'art_items/item-details.html')
 
     def test_getUpdateItemWithTooLongDescriptionWhenSignedIn__shouldRaiseError(self):
         self.client.force_login(self.user)
@@ -153,11 +161,11 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         with self.assertRaises(ValueError):
             update_item_form.save()
 
-    def test_getUpdateItemWithTooLondDescriptionWhenSignedIn__shouldNotUpdateArtItem(self):
+    def test_getUpdateItemWithTooLongDescriptionWhenSignedIn__shouldNotUpdateArtItem(self):
         self.client.force_login(self.user)
         existing_art_item = self.art_item
 
-        self.client.post(reverse('edit item', kwargs={'pk': existing_art_item.id}), data={
+        response = self.client.post(reverse('edit item', kwargs={'pk': existing_art_item.id}), data={
             'type': 'fashion',
             'name': 'test',
             'description': 'item description item description item description item description item description '
@@ -167,6 +175,8 @@ class UpdateArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         existing_art_item.refresh_from_db()
         self.assertEqual(existing_art_item.name, 'test')
         self.assertEqual(self.art_item.description, 'test item description')
+
+        self.assertTemplateUsed(response, 'art_items/item_edit.html')
 
 
 

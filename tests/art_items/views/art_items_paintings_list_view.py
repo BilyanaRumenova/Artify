@@ -36,6 +36,8 @@ class ArtItemPaintingsListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCa
         self.assertIn(item_1, response.context['painting_items'])
         self.assertIn(item_2, response.context['painting_items'])
         self.assertEqual(2, len(response.context['painting_items']))
+        self.assertTemplateUsed(response, 'categories/paintings_list_items.html')
+
 
     def test_createAnotherTypeArtItemsList__shouldReturnEmptyPaintingsList(self):
         self.client.force_login(self.user)
@@ -62,9 +64,13 @@ class ArtItemPaintingsListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCa
         self.assertNotIn(item_1, response.context['painting_items'])
         self.assertNotIn(item_2, response.context['painting_items'])
         self.assertEqual(0, len(response.context['painting_items']))
+        self.assertTemplateUsed(response, 'categories/paintings_list_items.html')
+
 
     def test_getPaintingsArtItemsListWhenNoPhotosAtAllCreated__shouldReturnEmptyPaintingsList(self):
         self.client.force_login(self.user)
         response = self.client.get(reverse('painting items'))
 
         self.assertEqual(0, len(response.context['painting_items']))
+        self.assertTemplateUsed(response, 'categories/paintings_list_items.html')
+

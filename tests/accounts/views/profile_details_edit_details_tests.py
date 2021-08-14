@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.core.exceptions import ValidationError
 from django.test import TestCase, Client
 from django.urls import reverse
 
@@ -27,6 +26,8 @@ class EditProfileDetailsTest(TestCase):
         })
         self.assertEqual(200, response.status_code)
         self.assertEqual(profile.profile_image, 'path/to/image.png')
+        self.assertTemplateUsed(response, 'accounts/edit_profile.html')
+
 
     def test_postDetails__whenLoggedInUserWithImage_shouldChangeProfileImage(self):
         path_to_image = 'path/to/image.png'
@@ -60,6 +61,8 @@ class EditProfileDetailsTest(TestCase):
         self.assertEqual(200, response.status_code)
         self.assertEqual(profile.first_name, 'test')
         self.assertEqual(profile.last_name, 'testov')
+        self.assertTemplateUsed(response, 'accounts/edit_profile.html')
+
 
     def test_postValidDetails__whenLoggedInUser_shouldChangeNames(self):
         first_name = 'test'
@@ -80,6 +83,7 @@ class EditProfileDetailsTest(TestCase):
         self.assertEqual(profile.first_name, 'testnew')
         self.assertEqual(profile.last_name, 'testovnew')
 
+
     def test_postInvalidFirstName__whenLoggedInUser_shouldNotChangeFirstName(self):
         profile = Profile.objects.get(pk=self.user.id)
         profile.first_name = 'test'
@@ -93,6 +97,7 @@ class EditProfileDetailsTest(TestCase):
         form = ProfileForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertEqual(profile.first_name, 'test')
+
 
     def test_postInvalidLastName__whenLoggedInUser_shouldNotChangeLastName(self):
         profile = Profile.objects.get(pk=self.user.id)
@@ -119,8 +124,9 @@ class EditProfileDetailsTest(TestCase):
             'location': profile.location,
         })
 
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(302, response.status_code)
         self.assertEqual(profile.location, 'sofia')
+
 
     def test_postDetails__whenLoggedInUser_shouldChangeLocation(self):
         location = 'sofia'
@@ -136,6 +142,7 @@ class EditProfileDetailsTest(TestCase):
 
         self.assertEqual(302, response.status_code)
         self.assertEqual(profile.location, 'sofiabg')
+
 
     def test_postInvalidLocation__whenLoggedInUser_shouldNotChangeLocation(self):
         profile = Profile.objects.get(pk=self.user.id)

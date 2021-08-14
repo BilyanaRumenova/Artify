@@ -31,6 +31,7 @@ class DeleteArtItemTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
             'pk': art_item.id,
         }))
         self.assertContains(response, 'Are you sure you want to delete')
+        self.assertTemplateUsed(response, 'art_items/item_delete.html')
 
     def test_postRequestToDeleteArtItemWhenOwner__shouldDeleteArtItem(self):
         self.client.force_login(self.user)

@@ -31,7 +31,7 @@ class EditArtItemForm(ArtItemForm):
                 attrs={
                     'readonly': 'readonly'
                 }
-            )
+            ),
         }
 
 

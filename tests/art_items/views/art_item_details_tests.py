@@ -32,6 +32,7 @@ class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertTrue(response.context['is_owner'])
         self.assertFalse(response.context['is_liked'])
         self.assertEqual(200, response.status_code)
+        self.assertTemplateUsed(response, 'art_items/item-details.html')
 
     def test_getArtItemDetails_whenArtItemExistsAndIsNotOwnerAndNotLiked_shouldReturnDetailsForOwner(self):
         self.client.force_login(self.user)
@@ -51,6 +52,7 @@ class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertFalse(response.context['is_owner'])
         self.assertFalse(response.context['is_liked'])
         self.assertEqual(200, response.status_code)
+        self.assertTemplateUsed(response, 'art_items/item-details.html')
 
 
     def test_getArtItemDetails_whenArtExistsAndIsNotOwnerAndLiked_shouldReturnDetailsForOwner(self):
@@ -71,3 +73,4 @@ class ArtItemDetailsTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
 
         self.assertFalse(response.context['is_owner'])
         self.assertTrue(response.context['is_liked'])
+        self.assertTemplateUsed(response, 'art_items/item-details.html')

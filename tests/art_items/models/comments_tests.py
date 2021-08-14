@@ -24,11 +24,25 @@ class CommentModelTest(TestCase):
         comment = Comment(comment='test comment test comment test comment test comment test comment'
                                   'test comment test comment test comment test comment test comment '
                                   'test comment test', )
-        self.assertRaises(ValidationError, comment.full_clean)
+        try:
+            comment.full_clean()
+            comment.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
+
 
     def test_CommentIsTooShortInvalidCreationIsUnsuccessful__shouldNotCreateComment(self):
-        comment = Comment(comment='t')
-        self.assertRaises(ValidationError, comment.full_clean)
+        comment = Comment(comment='t', )
+        try:
+            comment.full_clean()
+            comment.save()
+            self.fail()
+        except ValidationError as ex:
+            self.assertIsNotNone(ex)
+
+
+
 
 
 

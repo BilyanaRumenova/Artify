@@ -32,6 +32,8 @@ class ArtItemListViewTest(ArtItemTestUtils, UserTestUtils, ArtifyTestCase):
         self.assertIn(item_1, response.context['art_items'])
         self.assertIn(item_2, response.context['art_items'])
         self.assertEqual(2, len(response.context['art_items']))
+        self.assertTemplateUsed(response, 'art_items/items_list.html')
+
 
     def test_getArtItemsListWhenEmpty__shouldReturnEmptyView(self):
         self.client.force_login(self.user)
