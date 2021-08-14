@@ -9,7 +9,6 @@ urlpatterns = (
     path('signout/', SignOutView.as_view(), name='sign out user'),
     path('profile/', ProfileDetailsView.as_view(), name='profile details'),
     path('edit/', EditProfileDetailsView.as_view(), name='edit profile details'),
-    # path('profile/<int:pk>', OtherProfileDetailsView.as_view(), name='other profile details'),
     path('profile/<int:pk>', other_profile_details, name='other profile details'),
     path('follow/<int:pk>', FollowProfileView.as_view(), name='follow profile'),
 
