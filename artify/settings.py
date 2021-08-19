@@ -62,27 +62,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'artify.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd2n0vvajkmvi35',
-#         'USER': 'sriedlfrmsfbrx',
-#         'PASSWORD': '6a02b6c84d06c308667e2bd895f36ddab8499c4f3a93624abf901ac345f8f994',
-#         'HOST': 'ec2-63-34-97-163.eu-west-1.compute.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'artify_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
+        'NAME': 'd46nogchph40k1',
+        'USER': 'tiojrkconpoyno',
+        'PASSWORD': '8e705d6a6dd6064d83738eb076ca966f3e3a03c9aa4117c0461f0ad55ff0c15b',
+        'HOST': 'ec2-34-251-245-108.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'artify_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'mypassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     # {
