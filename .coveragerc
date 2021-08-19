@@ -1,7 +1,0 @@
-[run]
-omit=
-    '*/venv/*'
-    '*/tests/*'
-    '*/static/*'
-    '*/migrations/*'
-    '*/__init__.py/*'
