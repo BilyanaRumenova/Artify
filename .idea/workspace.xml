@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fca590-192d-4b19-a92c-f8f7b8886742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11fca590-192d-4b19-a92c-f8f7b8886742.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +208,8 @@
       <workItem from="1628746498639" duration="41073000" />
       <workItem from="1628852512595" duration="32269000" />
       <workItem from="1628920613479" duration="20496000" />
-      <workItem from="1629302192471" duration="11561000" />
+      <workItem from="1629302192471" duration="15410000" />
+      <workItem from="1629387603065" duration="1223000" />
     </task>
     <servers />
   </component>
