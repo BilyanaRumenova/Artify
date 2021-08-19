@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39065088-41dc-44e1-93a5-316916e5bb38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11fca590-192d-4b19-a92c-f8f7b8886742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11fca590-192d-4b19-a92c-f8f7b8886742.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6df857e8-dced-482f-844d-e6aac0a5927c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artify/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/artify/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +157,10 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="artify.settings" />
+        <env name="DATABASE_NAME" value="artify_db" />
+        <env name="DATABASE_USER" value="postgres" />
+        <env name="DATABASE_PASSWORD" value="mypassword" />
+        <env name="DATABASE_HOST" value="127.0.0.1" />
       </envs>
       <option name="SDK_HOME" value="D:\acer arhiv d\Python_Course\Python Web Basics\artify\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -209,7 +211,7 @@
       <workItem from="1628852512595" duration="32269000" />
       <workItem from="1628920613479" duration="20496000" />
       <workItem from="1629302192471" duration="15410000" />
-      <workItem from="1629387603065" duration="1223000" />
+      <workItem from="1629387603065" duration="5029000" />
     </task>
     <servers />
   </component>

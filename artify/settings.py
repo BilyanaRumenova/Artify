@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import cloudinary as cloudinary
@@ -7,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-%wqt82hpwk92v-p7*^#3^6k(p9w-j@iy0!m8mvsio_9wuiqy)('
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = [
     '*',
@@ -26,7 +27,6 @@ INSTALLED_APPS = [
     'artify.common',
     'artify.art_items',
 
-    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -37,8 +37,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    # 'responsive.middleware.DeviceInfoMiddleware',
 ]
 
 ROOT_URLCONF = 'artify.urls'
@@ -65,10 +63,10 @@ WSGI_APPLICATION = 'artify.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd46nogchph40k1',
-        'USER': 'tiojrkconpoyno',
-        'PASSWORD': '8e705d6a6dd6064d83738eb076ca966f3e3a03c9aa4117c0461f0ad55ff0c15b',
-        'HOST': 'ec2-34-251-245-108.eu-west-1.compute.amazonaws.com',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
         'PORT': '5432',
     }
 }
@@ -125,22 +123,7 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'responsive.context_processors.device_info',
-)
-
-DEFAULT_BREAKPOINTS = {
-    'phone': 480,
-    'tablet': 767,
-    'desktop': None,
-}
-
-MIDDLEWARE_CLASSES = (
-    'responsive.middleware.DeviceInfoMiddleware',
-)
-
 AUTH_USER_MODEL = 'accounts.ArtifyUser'
-
 
 cloudinary.config(
   cloud_name="dqn3ajxy7",
@@ -148,5 +131,3 @@ cloudinary.config(
   api_secret="oECIpYX1cwdUrDetKc2-8P-i0js",
   secure=True
 )
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
